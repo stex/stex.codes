@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+      context: "."
+      dockerfile: "Dockerfile.dev"
+    ports:
+      - "4000:4000"   # main jekyll server
+      - "35729:35729" # live-reload
+    volumes:
+      - ".:/app"

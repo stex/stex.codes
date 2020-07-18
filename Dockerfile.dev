@@ -1,0 +1,9 @@
+FROM ruby:slim as jekyll
+RUN apt-get update && \
+        apt-get install -y make libssl-dev g++
+WORKDIR /app
+COPY ./Gemfile* ./
+RUN bundle install
+COPY ./ ./
+
+CMD ["bundle", "exec", "jekyll", "serve", "-H", "0.0.0.0", "--livereload"]
