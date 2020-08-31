@@ -1,3 +1,9 @@
+/*--- HEADER ----------------------------------------------------------------*/
+
+header {
+	padding-top: 15px;
+}
+
 /*--- LINKS -----------------------------------------------------------------*/
 
 a {  
@@ -108,6 +114,10 @@ figure {
 
 svg:not(:root) {
   overflow: hidden; 
+}
+
+img {
+	border: 1em solid #131313;
 }
 
 /*--- PAGINATION ------------------------------------------------------------*/
@@ -271,6 +281,13 @@ header .entry-meta {
 		padding: 25px 15px;
 		overflow: hidden;
 
+		.featured-image {
+			img {
+				border-color: #fff;
+				border-width: 6px 6px 0 6px;
+			}
+		}
+
 		@media #{$small} {
 		.featured-image {
 				display:block;
@@ -351,6 +368,14 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: $heading-font;
+}
+
+h2 {
+	margin-top: 2em;
+}
+
+h3 {
+	margin-top: 1em;
 }
 
 h1 {
