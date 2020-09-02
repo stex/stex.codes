@@ -1,29 +1,29 @@
 ---
 layout: post
 title:  "Building an Alfred Workflow to export Attachments from Evernote"
-date:   2020-08-30 19:00 +0200
+date:   2020-09-02 19:00 +0200
 tags: alfred evernote ruby applescript
-categories: projects
+categories: programming
 featured-image: /assets/images/posts/evernote-alfred-workflow.png
 ---
 
 This post is about building an Alfred workflow that allows exporting all image attachments of the currently opened Evernote note as PDF.
 
-If you're just searching for the workflow, [here's the code on Github](https://github.com/Stex/alfred-evernote-helpers).
+If you're just looking for the workflow, [here's the code on Github](https://github.com/Stex/alfred-evernote-helpers).
 
 ---
 
 I recently started using Evernote for document management purposes. I'm not the biggest fan of its note taking
 capabilities, but the convenience of taking a picture with the mobile app and having it optimized and indexed
-as a document is pretty fantastic.  
+as a document is pretty amazing.
 
-However, I still wanted to be able to export the documents I scanned as PDFs which proofed a bit more difficult than expected
-as Evernote saves its scanned documents as one PNG image per page and attaches each one to the note. 
+However, I still wanted to be able to export the documents I scanned as PDFs which proofed a bit more difficult than expected:
+Evernote saves its scanned documents as one PNG image per page and attaches each one to the note.
 
 **So, why not just print to PDF?**
 
 My first idea was indeed to use the print dialog and generate a PDF out of it. However, Evernote adds some pretty substancial margin around
-the actual image, probably because of lower ppi:
+the actual image, probably because of lower dpi:
 
 <div class="flex flex-row">
     <div class="item">
@@ -39,20 +39,22 @@ the actual image, probably because of lower ppi:
 
 As you can see, I would get a tiny image inside an A4 PDF, not exactly what I was looking for.
 
+Since I didn't find a proper solution for this problem on the web, I decided to build one myself.
+
 ## The Applescript Part
 
-Luckily, Evernote has quite extensive Applescript support by now. It doesn't necessarily make it easy to 
+Luckily, Evernote has quite extensive Applescript support by now. It doesn't necessarily make it easy to
 achieve exactly what you're trying to do, but it at least gives you a lot of information.
 
-If you are like me and only visit Applescript when you're not able to find an easy solution in a proper language,
+<i class="far fa-lightbulb fa-fw" />If you are like me and only visit Applescript when you absolutely have to,
 here's something I learned: Most applications with Applescript support come with a dictionary of the things they support.
-To view it, open the Script Editor, choose "File" -> Open Dictionary" and choose the application you'd like to explore.
+To view it, open the Script Editor, choose `File` -> `Open Dictionary` and select the application you'd like to explore.
 
 I'll go through the steps I took to get to my final solution and try to show off a few problems I encountered and had to work around.
 
 ### Getting the Current Note's Data
 
-Assuming that the user didn't select a bunch of notes at once and just opened one by clicking on it, 
+Assuming that the user didn't select a bunch of notes at once and just opened one by clicking on it,
 `selection` is a 1 element list that contains exactly this note object.
 
 ```applescript
@@ -91,11 +93,11 @@ repeat with idx from 1 to count of attachments
 end repeat
 ```
 
-Looks like it should work, but doesn't. Instead, I was presented with my first error: 
+Looks like it should work, but doesn't. Instead, I was presented with my first error:
 
 > error "Evernote got an error: “31EB6536-288F-4A4D-8ADA-1D455165115E.png” couldn’t be copied because you don’t have permission to access “Downloads”." number 513
 
-What happened here?   
+What happened here?
 With the more recent versions of macOS, Apple followed what they already had in place for iOS applications: Each app runs inside its own little
 file system sandbox and you have to explicitly give it access to folders outside of it. Since I didn't find a way to give Evernote access to
 a certain folder from inside Applescript, I chose an output folder instead that I knew Evernote had write access to - its own sandbox.
@@ -110,9 +112,9 @@ repeat with idx from 1 to count of attachments
 end repeat
 ```
 
-That got rid of the permission error, but reveiled something else. 
+That got rid of the permission error, but reveiled something else.
 I was absolutely convinced that the list of attachments Evernote gave me inside Applescript would follow the
-order of attachments inside the note. But no, it follows the random filenames Evernote gave them leaving me with
+order of attachments inside the note. But no, it follows the random filenames Evernote assigned them leaving me with
 no guaranteed order at all.
 
 As far as I could see, there was no way to get the actual attachment order from Evernote, so how to proceed?
@@ -142,7 +144,7 @@ Let's take a look at such a file:
 ```
 
 As you can see, it contains an `en-media` tag for each attachment in the note with, including a `hash` attribute
-which corresponds to the `hash` property available inside Applescript.
+which corresponds to the `hash` property available for each `note` object inside Applescript.
 
 At this point I decided that Applescript wasn't enough to solve my problem completely,
 but I still had to use it to extract all the necessary information from Evernote and make it available to another script.
@@ -151,7 +153,7 @@ Namely, I needed the following data outside of Applescript:
 1. The note's ENML content
 2. The attachment files saved with their hash as filenames
 
-Both could be easily achieved:
+Both could easily be achieved:
 
 ```applescript
 tell oNote
@@ -165,7 +167,7 @@ tell oNote
 end tell
 ```
 
-Luckily, Applescript gives us access to shell scripting with `do shell script`. This makes saving a string to a file by redirecting an `echo` 
+Luckily, Applescript gives us access to shell scripting with `do shell script`. This makes saving a string to a file by redirecting an `echo`
 output easy enough - from what I found on the internet, this seems to be the solution used by most developers.
 
 After cleaning up a bit and putting the exported files into a subfolder to not pollute Evernote's sandbox too much, I ended up with
@@ -187,7 +189,7 @@ tell application "Evernote"
   tell oNote
     set noteTitle to title
     set noteContent to ENML content
-        
+
     # We have to use a temp path that Evernote has access to... and nothing outside
     # its sandboxed container is guaranteed to be.
     set notePath to evernoteDataFolder & "/attachment_export/" & noteTitle & "/"
@@ -197,7 +199,7 @@ tell application "Evernote"
     # We need it to find out the correct attachment order as Evernote
     # by default orders them by filename
     do shell script "echo '" & noteContent & "' > '" & notePath & "note.xml'"
-    
+
     repeat with oAttachment in attachments
       # Save each attachment using its hash as filename.
       # This way, we can match it to the values from the XML content later.
@@ -223,8 +225,8 @@ Running the this script with a note titled "Notiz" containing 2 attachments lead
 
 Now that all the necessary information was available outside of Evernote, I needed to feed it to another script
 which would find out the actual attachment order and run `convert` for me.
+I chose Ruby as Alfred supports it well and... I just like Ruby.
 
-It could have been everything, but I really like Ruby for scripting (and Alfred supporting it well wasn't actually bad thing either).  
 The script assumes that the path the note information was saved to is passed in as first command line argument.
 
 First of all, I had to get the note's XML content:
@@ -239,7 +241,7 @@ NOTE_XML_FILE   = NOTE_PATH.join("note.xml").to_s
 xml = File.read(NOTE_XML_FILE)
 ```
 
-As a reminder, this gives us a file containing multiple tags containing the attachment information we week:
+As a reminder, this gives us a file containing multiple tags with the attachment information:
 
 ```xml
 <en-media hash="270493a2b1a89ceeb2528f1c0e97d1f5" title="Attachment" width="1979" type="image/png"/>
@@ -294,46 +296,79 @@ FileUtils.rm_rf(NOTE_PATH)
 puts PDF_OUTPUT_FILE.to_s
 ```
 
-Again, please note that the path to the generated PDF is returned (for Alfred, the script's output is its return value).
+Please note that I decided to pass in the full path to the `convert` utility here as an environment variable.
+Alfred runs its code in an environment without sourcing your `.bash_profile` or similar, leading to a different `PATH` than you'd expect.
+
+By default, `convert` resides in `/usr/local/bin` (when installed through `brew`), but I wanted to make sure other users
+could modify the path if necessary.
 
 ## The Alfred Part
 
-Now with both scripts working on their own, I started a new Alfred workflow to call them in succession.  
-Creating a workflow is pretty straight forward: 
+Now with both scripts working on their own, I started building a new Alfred workflow to call them in succession.
+Creating the workflow was pretty straight forward:
 
 1. Add a trigger
 2. Call each script and pipe its output into the next script as command line argument
 3. Add some convenience for the user (optional)
 
-### Adding a Trigger
+### 1. Adding a Trigger
 
 While Alfred supports a lot of different trigger events (e.g. hotkeys or Applescript), I went with a simple keyword here.
 Whenever the user types `evernote-attachments-pdf` in Alfred (auto completion is available), it would offer the corresponding command.
 
 <div class="flex flex-row">
-    <div class="item">
-        <div class="text-center"><img src="/assets/images/posts/evernote-alfred-trigger.png" /></div>
-    </div>
-
-    <div class="item">
-        <div class="text-center"><img src="/assets/images/posts/evernote-alfred-command.png" /></div>
-    </div>
+  <div class="item text-center">{{ "/assets/images/posts/evernote-alfred-trigger.png" | lightbox_image }}</div>
+  <div class="item text-center">{{ "/assets/images/posts/evernote-alfred-command.png" | lightbox_image }}</div>
 </div>
 
-## Running both Scripts in Succession
+### 2. Running both Scripts in Succession
 
-I went with two "Run Script" actions for the Applescript and Ruby parts. The latter had to be configured to take its input as command line argument (`argv`).
+I went with two "Run Script" actions for the Applescript and Ruby parts.
+For the Applescript, the input setting didn't matter, but I had to make sure to set the Ruby script to
+take its input as `ARGV`.
+
+As mentioned before, Alfred always "pipes" the console output of a script to the next action in its workflow.
+For Applescript, the value after `return` is automatically printed out, in our Ruby script, we had to do it manually through `puts`.
 
 <div class="flex flex-row">
-    <div class="item">
-        <div class="text-center">
-          <a href="/assets/images/posts/evernote-alfred-scripts.png">
-            <img src="/assets/images/posts/evernote-alfred-scripts.png" />
-          </a>
-        </div>
-    </div>
-
-    <div class="item">
-        <div class="text-center"><img src="/assets/images/posts/evernote-alfred-command.png" /></div>
-    </div>
+  <div class="item text-center">{{ "/assets/images/posts/evernote-alfred-scripts.png" | lightbox_image }}</div>
+  <div class="item text-center">{{ "/assets/images/posts/evernote-alfred-script-settings.png" | lightbox_image }}</div>
 </div>
+
+The Ruby script could be used as is, for the Applescript, I had to wrap my code inside a sub-routine:
+
+```applescript
+on run argv
+ ...
+end run
+```
+
+With this done, we can already run our workflow from Alfred and are presented with a neat PDF inside the output directory.
+I decided to go a bit further though and give some sort of response to the user to let them know everything worked as expected.
+
+### 3. Adding some Convenience
+
+Many applications open the directory they put a file in after its creation so I went with the flow and added a "Reveil File in Finder" action to the workflow.
+Since our Ruby script's output is the full path to the output directory, I just had to connect it to the Ruby script and everything worked as expected:
+
+<div class="text-center">{{ "/assets/images/posts/evernote-reveil-in-finder.png" | lightbox_image }}</div>
+
+Since I personally find this behaviour a bit annoying from time to time, I decided to give the user a choice here.
+I defined another environment variable named `REVEIL_IN_FINDER` and added a `conditional` block to the workflow:
+
+<div class="flex flex-row">
+  <div class="item text-center">{{ "/assets/images/posts/evernote-alfred-conditional.png" | lightbox_image }}</div>
+  <div class="item text-center">{{ "/assets/images/posts/evernote-alfred-conditional-settings.png" | lightbox_image }}</div>
+</div>
+
+This way, the output folder from my Ruby script would either be sent to the "Reveil File in Finder" action or a notification would be shown instead.
+
+## Conclusion
+
+When I started with the Evernote Applescript Dictionary, I was convinced I would have this solved within half an hour... should have learned that after that many years of programming.
+
+While the app sandboxing took me the longest to figure out, it was the easiest to be solved in the end.
+I was a bit disappointed by the Evernote documentation regarding its Applescript usage, e.g. the order attachments would be returned. This caused me to try a lot of different solutions to work
+around each newfound behaviour until I finally settled with an additional script.
+
+Anyway, I learned a bit more about MacOS applications and scripting and got a nice PDF export out of it, so definitely worth it.

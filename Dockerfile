@@ -3,6 +3,7 @@ RUN apt-get update && \
         apt-get install -y make libssl-dev g++
 WORKDIR /app
 COPY ./Gemfile* ./
+COPY ./vendor ./vendor
 RUN bundle install
 COPY ./ ./
 ENV JEKYLL_ENV=production
