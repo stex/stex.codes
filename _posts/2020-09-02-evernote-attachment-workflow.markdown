@@ -1,9 +1,12 @@
 ---
 layout: post
 title:  "Building an Alfred Workflow to export Attachments from Evernote"
+description: "My learnings on how to access Evernote data through Applescript and using it in an Alfred Workflow (with a bit of Ruby)."
 date:   2020-09-02 19:00 +0200
 tags: alfred evernote ruby applescript
 categories: programming
+image:
+  thumb: posts/evernote-workflow-thumb.png
 featured-image: /assets/images/posts/evernote-alfred-workflow.png
 ---
 
