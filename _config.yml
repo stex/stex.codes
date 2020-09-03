@@ -23,7 +23,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Development blog about personal (and sometimes work) projects and experiences by a Ruby architect.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://stex.codes" # the base hostname & protocol for your site, e.g. http://example.com
-logo: "logo-raccoon.png"
+logo: "logo-raccoon.jpg"
 
 owner:
   name: "Stefan Exner"
