@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+SITEMAP_URL = "https://stex.codes/sitemap.xml"
+
+require 'net/http'
+require 'cgi'
+
+Net::HTTP.get('www.google.com', '/webmasters/tools/ping?sitemap=' + CGI.escape(SITEMAP_URL))
