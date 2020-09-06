@@ -31,12 +31,12 @@ the actual image, probably because of lower dpi:
 <div class="flex flex-row">
     <div class="item">
         <div class="text-center">Actual Image</div>
-        <img src="/assets/images/posts/evernote-actual-image.png" />
+        <img src="/assets/images/posts/evernote-actual-image.png" alt="Scanned Evernote Attachment" />
     </div>
 
     <div class="item">
         <div class="text-center">Print to PDF output</div>
-        <img src="/assets/images/posts/evernote-print-to-pdf.png" />
+        <img src="/assets/images/posts/evernote-print-to-pdf.png" alt="Print to PDF output" />
     </div>
 </div>
 
@@ -320,8 +320,8 @@ While Alfred supports a lot of different trigger events (e.g. hotkeys or Applesc
 Whenever the user types `evernote-attachments-pdf` in Alfred (auto completion is available), it would offer the corresponding command.
 
 <div class="flex flex-row">
-  <div class="item text-center">{{ "/assets/images/posts/evernote-alfred-trigger.png" | lightbox_image }}</div>
-  <div class="item text-center">{{ "/assets/images/posts/evernote-alfred-command.png" | lightbox_image }}</div>
+  <div class="item text-center">{{ "/assets/images/posts/evernote-alfred-trigger.png" | lightbox_image: "Alfred Workflow Trigger Dialog" }}</div>
+  <div class="item text-center">{{ "/assets/images/posts/evernote-alfred-command.png" | lightbox_image: "Alfred Input" }}</div>
 </div>
 
 ### 2. Running both Scripts in Succession
@@ -334,8 +334,8 @@ As mentioned before, Alfred always "pipes" the console output of a script to the
 For Applescript, the value after `return` is automatically printed out, in our Ruby script, we had to do it manually through `puts`.
 
 <div class="flex flex-row">
-  <div class="item text-center">{{ "/assets/images/posts/evernote-alfred-scripts.png" | lightbox_image }}</div>
-  <div class="item text-center">{{ "/assets/images/posts/evernote-alfred-script-settings.png" | lightbox_image }}</div>
+  <div class="item text-center">{{ "/assets/images/posts/evernote-alfred-scripts.png" | lightbox_image: "Alfred Workflow Scripts" }}</div>
+  <div class="item text-center">{{ "/assets/images/posts/evernote-alfred-script-settings.png" | lightbox_image: "Alfred Workflow Script Settings" }}</div>
 </div>
 
 The Ruby script could be used as is, for the Applescript, I had to wrap my code inside a sub-routine:
@@ -354,14 +354,14 @@ I decided to go a bit further though and give some sort of response to the user 
 Many applications open the directory they put a file in after its creation so I went with the flow and added a "Reveil File in Finder" action to the workflow.
 Since our Ruby script's output is the full path to the output directory, I just had to connect it to the Ruby script and everything worked as expected:
 
-<div class="text-center">{{ "/assets/images/posts/evernote-reveil-in-finder.png" | lightbox_image }}</div>
+<div class="text-center">{{ "/assets/images/posts/evernote-reveil-in-finder.png" | lightbox_image: "Alfred Reveil in Finder Block" }}</div>
 
 Since I personally find this behaviour a bit annoying from time to time, I decided to give the user a choice here.
 I defined another environment variable named `REVEIL_IN_FINDER` and added a `conditional` block to the workflow:
 
 <div class="flex flex-row">
-  <div class="item text-center">{{ "/assets/images/posts/evernote-alfred-conditional.png" | lightbox_image }}</div>
-  <div class="item text-center">{{ "/assets/images/posts/evernote-alfred-conditional-settings.png" | lightbox_image }}</div>
+  <div class="item text-center">{{ "/assets/images/posts/evernote-alfred-conditional.png" | lightbox_image: "Alfred Workflow Conditional" }}</div>
+  <div class="item text-center">{{ "/assets/images/posts/evernote-alfred-conditional-settings.png" | lightbox_image: "Alfred Workflow Conditional Settings" }}</div>
 </div>
 
 This way, the output folder from my Ruby script would either be sent to the "Reveil File in Finder" action or a notification would be shown instead.

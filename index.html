@@ -3,11 +3,12 @@ layout: post-index
 ---
 {% for post in paginator.posts %}
 <article>
-    
+    {% if post.featured-image %}
     <!-- POST FEATURED IMAGE -->
     <div class="featured-image">
-    <img src="{{ post.featured-image}}" style="width:100%">
+      <img src="{{ post.featured-image}}" alt="{{ post.title }} Featured Image" style="width:100%">
     </div>
+    {% endif %}
 
     <!-- POST TITLE -->
     <header>
@@ -23,10 +24,10 @@ layout: post-index
 <!--     <div class="entry-content">
         {{ post.content }}
     </div> -->
-    
+
     <!--- DIVIDING LINE -->
     <hr>
-    
+
     <!-- POST TAGS -->
     <div class="inline-tags">
         <span>
@@ -35,9 +36,9 @@ layout: post-index
         {% endfor %}
         </span>
     </div>
-    
+
     <br>
-    
+
     <!-- POST DATE -->
     <div class="post-date">
         <span class="entry-date date published updated">
@@ -46,7 +47,7 @@ layout: post-index
             </time>
         </span>
     </div>
-    
+
 </article>
 {% endfor %}
 
