@@ -1,6 +1,6 @@
 FROM ruby:slim as jekyll
 RUN apt-get update && \
-        apt-get install -y make libssl-dev g++
+        apt-get install -y make libssl-dev g++ git libcurl4
 WORKDIR /app
 COPY ./Gemfile* ./
 COPY ./vendor ./vendor

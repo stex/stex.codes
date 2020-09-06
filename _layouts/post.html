@@ -19,9 +19,11 @@
     <div id="main" role="main">
         <article class="hentry">
 
+            {% if page.featured-image %}
             <div class="featured-image">
             <img src="{{ page.featured-image}}" style="width:100%">
             </div>
+            {% endif %}
 
             <!-- MAIN -->
             <h1 class="entry-title">
