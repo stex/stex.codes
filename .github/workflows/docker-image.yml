@@ -16,6 +16,7 @@ jobs:
     - name: Build the Docker image
       run: docker build -t sterexx/stex.codes-dev -f Dockerfile.dev .
   test:
+    needs: [build]
     runs-on: ubuntu-latest
     container:
       image: sterexx/stex.codes-dev
