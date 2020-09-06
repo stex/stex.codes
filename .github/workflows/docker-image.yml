@@ -1,14 +1,11 @@
-name: Docker Image CI
+name: Build, Test and Publish
 
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
-
-  test_html:
+  build_and_test:
     runs-on: ubuntu-latest
 
     steps:
