@@ -9,10 +9,16 @@ on:
 jobs:
 
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build -t sterexx/stex.codes-dev -f Dockerfile.dev .
+  test:
+    runs-on: ubuntu-latest
+    container:
+      image: sterexx/stex.codes-dev
+    steps:
+      - name: HTMLProofer
+        run: bundle exec rake test
