@@ -4,7 +4,9 @@ RUN apt-get update && \
 WORKDIR /app
 COPY ./Gemfile* ./
 COPY ./vendor ./vendor
-RUN bundle install
+
+RUN bundle config set deployment 'true'
+RUN bundle install --without=test
 COPY ./ ./
 ENV JEKYLL_ENV=production
 RUN bundle exec jekyll build
