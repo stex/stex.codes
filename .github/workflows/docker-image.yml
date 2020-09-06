@@ -21,8 +21,14 @@ jobs:
     needs: [build_and_test]
     env:
       DOCKER_IMAGE: ${{ secrets.DOCKER_IMAGE }}
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
     steps:
       - uses: actions/checkout@v2
       - name: Build Production Image
         run: docker build -t ${DOCKER_IMAGE} .
+      - name: Login to Docker Registry
+        run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+      - name: "Push Image"
+        run: docker push "$DOCKER_IMAGE":latest
  
