@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Building an Alfred Workflow to export Attachments from Evernote"
+title:  "Building an Alfred Workflow to export Attachments from Evernote (< v10)"
 description: "My learnings on how to access Evernote data through Applescript and using it in an Alfred Workflow (with a bit of Ruby)."
 date:   2020-09-02 19:00 +0200
 tags: alfred evernote ruby applescript
@@ -13,6 +13,18 @@ featured-image: /assets/images/posts/evernote-alfred-workflow.png
 This post is about building an Alfred workflow that allows exporting all image attachments of the currently opened Evernote note as PDF.
 
 If you're just looking for the workflow, [here's the code on Github](https://github.com/Stex/alfred-evernote-helpers).
+
+---
+
+### Update (2020-10-09)
+
+With the latest evernote update to electron, it looks like applescript support was dropped completely, therefore, this workflow
+isn't working any more.
+
+Since I still need a way to export attachments, I'll look into using the Evernote API some time, but that won't be as accessible
+to other users since you  need an API key - or trust a random dude's application to connect to your Evernote account.
+
+I'll update this post again in case I find another solution.
 
 ---
 
