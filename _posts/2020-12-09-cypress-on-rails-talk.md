@@ -7,7 +7,7 @@ tags: cypress rails end-to-end-tests capybara talk
 categories: programming
 comment_issue_term: "Cypress On Rails (Talk)"
 image:
-  thumb: posts/cypress-on-rails-thumb.png
+  thumb: posts/cypress-on-rails-talk-thumb.png
 featured-image: /assets/images/posts/cypress-on-rails-title.jpg
 ---
 
