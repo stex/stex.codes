@@ -1,4 +1,4 @@
-FROM ruby:2slim as jekyll
+FROM ruby:2-slim as jekyll
 RUN apt-get update && \
         apt-get install -y make libssl-dev g++
 WORKDIR /app
