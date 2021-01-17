@@ -57,11 +57,14 @@ paginate: 5
 exclude:
   - .sass-cache/
   - .jekyll-cache/
+  - bin/
   - Gemfile
   - Gemfile.lock
+  - Rakefile
   - Dockerfile
   - Dockerfile.dev
   - docker-compose.yml
+  - nginx.conf
   - node_modules/
   - vendor/bundle/
   - vendor/cache/
