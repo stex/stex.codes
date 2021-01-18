@@ -113,7 +113,7 @@ white container below the post. It will be easier to read.
 
 ---
 
-**Update (06.09.2020)**
+**Update (06.09.2020/18.01.2020)**
 
 *utterances* by default places the content of the `<title>` attribute inside its issue names and uses it to find the matching issue for a post.  
 I changed this post's title and sure enough the comments were gone.
@@ -122,12 +122,18 @@ To work around this, I decided to use an own term to put into the issue per page
 to change posts after publishing them.
 
 ```js
-<script src="https://utteranc.es/client.js"
-        repo="stex/stex.codes"
-        issue-term="{% if page.comment_issue_term %}{{ page.comment_issue_term }}{% else %}url{% endif %}"
-        label="comment"
-        theme="github-dark"
-        crossorigin="anonymous"
-        async>
-</script>
+{%- raw -%}
+{% unless page.hide_comments %}
+  <script src="https://utteranc.es/client.js"
+          repo="stex/stex.codes"
+          issue-term="{% if page.comment_issue_term %}{{ page.comment_issue_term }}{% else %}url{% endif %}"
+          label="comment"
+          theme="github-dark"
+          crossorigin="anonymous"
+          async
+  ></script>
+{% endunless %}
+{% endraw -%}
 ```
+
+This allows setting the issue term in the posts [front matter](https://jekyllrb.com/docs/front-matter/) as `comment_issue_term: Something` or hide comments completely by providing `hide_comments: true`.

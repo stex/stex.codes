@@ -25,7 +25,9 @@ It works, but doesn't look too elegant.
 
 The new workflow can be found here:
 
-https://github.com/Stex/alfred-evernote-helpers/tree/master/evernote-attachments-pdf
+<i class="fas fa-external-link-alt fa-fw" /> [Source Code on Github](https://github.com/Stex/alfred-evernote-helpers/tree/master/evernote-attachments-pdf)
+
+---
 
 ### Update (2020-10-09)
 
