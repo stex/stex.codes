@@ -18,6 +18,7 @@ group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
   gem "jekyll-paginate", "~> 1.1.0"
   gem "jekyll-sitemap", "~> 1.4.0"
+  gem 'jekyll-seo-tag', "~> 2.7.1"
   gem "custom_liquid", path: "vendor/gems/custom_liquid"
 end
 
