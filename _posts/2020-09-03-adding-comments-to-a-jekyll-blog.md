@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Adding Comments to a Jekyll Blog"
-description: "Adding comments as Github Issues to Jekyll"
-date:   2020-09-03 18:00 +0200
+description: "Comparison of Staticman and Utterances to integrate comments into a static blog."
+date: 2020-09-03 18:00 +0200
 tags: jekyll
 categories: programming
 comment_issue_term: "Jekyll Comments Integration"
@@ -121,7 +121,7 @@ I changed this post's title and sure enough the comments were gone.
 To work around this, I decided to use an own term to put into the issue per page and use its URL as fallback. This way, I have a little more freedom
 to change posts after publishing them.
 
-```js
+```html
 {%- raw -%}
 {% unless page.hide_comments %}
   <script src="https://utteranc.es/client.js"

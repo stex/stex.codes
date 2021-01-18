@@ -5,8 +5,7 @@ description: "My learnings on how to access Evernote data through Applescript an
 date:   2020-09-02 19:00 +0200
 tags: alfred evernote ruby applescript
 categories: programming
-image:
-  thumb: posts/evernote-workflow-thumb.png
+image: /assets/images/posts/evernote-workflow-thumb.png
 featured-image: /assets/images/posts/evernote-alfred-workflow.png
 ---
 
@@ -23,9 +22,7 @@ I updated the workflow for the new Evernote electron app.
 Since Evernote supports neither Applescript nor `x-callback-url` now, I had to work around it Selenium style and click on each UI element from Applescript.
 It works, but doesn't look too elegant.
 
-The new workflow can be found here:
-
-<i class="fas fa-external-link-alt fa-fw" /> [Source Code on Github](https://github.com/Stex/alfred-evernote-helpers/tree/master/evernote-attachments-pdf)
+The new workflow can be found here: <i class="fas fa-external-link-alt fa-fw" /> <a href="https://github.com/Stex/alfred-evernote-helpers/tree/master/evernote-attachments-pdf" target="_blank">Source Code on Github</a>
 
 ---
 
