@@ -14,6 +14,16 @@ COPY ./ ./
 ENV JEKYLL_ENV=production
 RUN bundle exec jekyll build
 
+FROM node:lts-alpine as node
+RUN npm install -g npm
+RUN mkdir -p /app
+WORKDIR /app
+COPY --from=jekyll /app/package.json ./package.json
+RUN npm install
+COPY --from=jekyll /app/bin/ ./
+COPY --from=jekyll /app/_site ./_site
+RUN ./prettify_html
+
 FROM nginx
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=jekyll /app/_site /usr/share/nginx/html
+COPY --from=node /app/_site /usr/share/nginx/html

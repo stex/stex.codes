@@ -1,0 +1,9 @@
+{
+  "name": "stex.codes",
+  "dependencies": {
+    "pretty": "2.0.0",
+    "glob": "7.1.6"
+  },
+  "author": "Stefan Exner"
+}
+

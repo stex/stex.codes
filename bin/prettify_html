@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+const glob = require('glob');
+const fs = require('fs');
+const pretty = require('pretty');
+
+glob.sync('./_site/**/*.html').forEach((filename) => {
+  const html = fs.readFileSync(filename, 'utf8');
+  console.log(pretty(html, { ocd: true }));
+  fs.writeFileSync(filename, pretty(html, { ocd: true }));
+})

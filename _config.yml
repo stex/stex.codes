@@ -68,6 +68,7 @@ exclude:
   - Dockerfile
   - Dockerfile.dev
   - docker-compose.yml
+  - package.json
   - nginx.conf
   - node_modules/
   - vendor/bundle/
