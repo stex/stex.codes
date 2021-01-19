@@ -17,52 +17,52 @@
     {% include browser-upgrade.html %}
 
     <div id="main" role="main">
-        <article class="hentry">
+      <article class="hentry">
 
-            {% if page.featured-image %}
-            <div class="featured-image">
-            <img src="{{ page.featured-image}}" alt="{{ page.title }} Featured Image" style="width:100%">
-            </div>
-            {% endif %}
+        {% if page.featured-image %}
+        <div class="featured-image">
+          <img src="{{ page.featured-image}}" alt="{{ page.title }} Featured Image" style="width:100%">
+        </div>
+        {% endif %}
 
-            <!-- MAIN -->
-            <h1 class="entry-title">
-                <a>{{ page.title }}</a>
-            </h1>
-            <h3 class="entry-subtitle">
-                <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ page.subtitle }}</a>
-            </h3>
+        <!-- MAIN -->
+        <h1 class="entry-title">
+            <a>{{ page.title }}</a>
+        </h1>
+        <h3 class="entry-subtitle">
+            <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ page.subtitle }}</a>
+        </h3>
 
-            <hr>
+        <hr>
 
-            <!-- POST CONTENT -->
-            <div class="entry-content">
-                {{ page.content }}
-            </div>
+        <!-- POST CONTENT -->
+        <div class="entry-content">
+            {{ page.content }}
+        </div>
 
-            {% if page.tags %}
-            <!--- DIVIDING LINE -->
-            <hr>
+        {% if page.tags %}
+        <!--- DIVIDING LINE -->
+        <hr>
 
-            <!-- POST TAGS -->
-            <div class="inline-tags">
-                <span>
-                    {% for tag in page.tags %}
-                        <a href="/tags/#{{tag}}">#{{ tag }}&nbsp;&nbsp;&nbsp;</a>
-                    {% endfor %}
-                </span>
-            </div>
-            {% endif %}
+        <!-- POST TAGS -->
+        <div class="inline-tags">
+            <span>
+                {% for tag in page.tags %}
+                    <a href="/tags/#{{tag}}">#{{ tag }}&nbsp;&nbsp;&nbsp;</a>
+                {% endfor %}
+            </span>
+        </div>
+        {% endif %}
 
-            {% if page.date %}
-            <br>
+        {% if page.date %}
+        <br>
 
-            <!-- POST DATE -->
-            <div class="post-date">
-                {{ page.date | date_to_string }}
-            </div>
-            {% endif %}
-        </article>
+        <!-- POST DATE -->
+        <div class="post-date">
+            {{ page.date | date_to_string }}
+        </div>
+        {% endif %}
+      </article>
     </div>
 
     {% unless page.hide_comments %}
@@ -78,9 +78,5 @@
 </body>
 
 <!-- FOOTER -->
-<footer role="contentinfo">
-    <div class="footer-wrapper">
-        {% include footer.html %}
-    </div>
-</footer>
+{% include footer.html %}
 </html>
