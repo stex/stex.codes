@@ -212,27 +212,28 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a 
 	font-weight: 100;
 }
 
-.main-header-image {
-    img {
-        @media #{$medium} {
-            margin-left: 0px;
-			margin-right: 0px;
-			max-width: $column-width;
-		}
+.main-header {
+  h1 {
+    text-align: center;
 
-		@media #{$large} {
-			max-width: $column-width;
-		}
+    a {
+      text-transform: none;
+      color: lighten($base-color, 30);
+      font-size: 0.6em;
+      letter-spacing: 3px;
+
+      .domain-initials {
+        font-size: 2em;
+        color: lighten($base-color, 80);
+        letter-spacing: 5px;
+      }
     }
+  }
 
-    img:hover {
-        opacity: 0.8;
-    }
-
-    h1, a, div {
-    	text-transform: uppercase;
-		color: lighten($base-color, 60);
-		letter-spacing: 5px;
+  h1, a, div {
+    text-transform: uppercase;
+    color: lighten($base-color, 60);
+    letter-spacing: 5px;
 	}
 }
 
