@@ -118,10 +118,6 @@ svg:not(:root) {
 
 img {
   border: 1em solid #131313;
-
-  &.avatar {
-    max-width: 150px;
-  }
 }
 
 /*--- PAGINATION ------------------------------------------------------------*/
@@ -215,19 +211,6 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a 
 .main-header {
   h1 {
     text-align: center;
-
-    a {
-      text-transform: none;
-      color: lighten($base-color, 30);
-      font-size: 0.6em;
-      letter-spacing: 3px;
-
-      .domain-initials {
-        font-size: 2em;
-        color: lighten($base-color, 80);
-        letter-spacing: 5px;
-      }
-    }
   }
 
   h1, a, div {

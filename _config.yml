@@ -5,6 +5,7 @@ description: >-
 baseurl: ""
 url: "https://stex.codes"
 logo: "logo-raccoon.jpg"
+timezone: Europe/Berlin
 
 owner:
   name: "Stefan Exner"
