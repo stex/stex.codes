@@ -5,7 +5,7 @@ permalink: /about/
 hide_comments: true
 ---
 
-<img src="/assets/images/stex.jpeg" class="about" />
+<img src="/assets/images/stex.jpeg" alt="Photo Stefan Exner" class="about" />
 
 ## Ahoy, glad you made it here!
 

@@ -11,8 +11,6 @@ featured-image: /assets/images/posts/evernote-alfred-workflow.png
 
 This post is about building an Alfred workflow that allows exporting all image attachments of the currently opened Evernote note as PDF.
 
-If you're just looking for the workflow, [here's the code on Github](https://github.com/Stex/alfred-evernote-helpers).
-
 ---
 
 ### Update (2021-01-18)
@@ -22,7 +20,7 @@ I updated the workflow for the new Evernote electron app.
 Since Evernote supports neither Applescript nor `x-callback-url` now, I had to work around it Selenium style and click on each UI element from Applescript.
 It works, but doesn't look too elegant.
 
-The new workflow can be found here: <i class="fas fa-external-link-alt fa-fw" /> <a href="https://github.com/Stex/alfred-evernote-helpers/tree/master/evernote-attachments-pdf" target="_blank">Source Code on Github</a>
+The new workflow can be found here: <a href="https://github.com/Stex/alfred-evernote-helpers/tree/master/evernote-attachments-pdf" class="icon external" target="_blank">Source Code on Github</a>
 
 ---
 
