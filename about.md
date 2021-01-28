@@ -11,7 +11,7 @@ hide_comments: true
 
 I'm Stefan Exner (hence the domain name), currently working as Digital Solution Architect and living in Hamburg, Germany.
 
-I've always been interested in everything regarding computers and started with programming when I was around 11. Ruby was the first programming language I really fell in love with in 2008 due to its code just feeling... elegant - and I still love it. Of course it's important to always choose the right tool for each job, but when I can use Ruby, there's a high chance I will :)
+I've always been interested in everything regarding computers and started with programming when I was around 11. Ruby was the first programming language I really fell in love with in 2008 due to its code just feeling... elegant - and I still love it. Of course it's important to always choose the right tool for each job, but when I can use Ruby, there's a good chance I will :)
 
 Apart from development, I love making music (Piano, Guitar, Violin, Singing), Audiobooks ("Hörspiele") and amateur VA work.
 

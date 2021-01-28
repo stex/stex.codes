@@ -47,6 +47,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-last-modified-at
+  - jekyll-redirect-from
   - custom_liquid
 
 paginate: 5

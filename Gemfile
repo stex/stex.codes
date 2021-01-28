@@ -20,6 +20,7 @@ group :jekyll_plugins do
   gem "jekyll-sitemap", "~> 1.4.0"
   gem "jekyll-seo-tag", "~> 2.7.1"
   gem "jekyll-last-modified-at"
+  gem 'jekyll-redirect-from'
   gem "custom_liquid", path: "vendor/gems/custom_liquid"
 end
 

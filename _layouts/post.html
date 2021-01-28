@@ -59,7 +59,7 @@
 
         <!-- POST DATE -->
         <div class="post-date">
-            {{ page.date | date_to_string }}
+            {{ page.date | date_to_string }} | Updated: {{ page.last_modified_at | date_to_string }}
         </div>
         {% endif %}
       </article>

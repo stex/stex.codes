@@ -12,7 +12,7 @@ RUN bundle config set deployment 'true'
 RUN bundle install --without=test
 COPY ./ ./
 ENV JEKYLL_ENV=production
-RUN bundle exec jekyll build
+RUN bundle exec jekyll build -V
 
 FROM node:lts-alpine as node
 RUN npm install -g npm
