@@ -10,24 +10,6 @@ a {
 	text-decoration: none;
   color: $link-color;
 
-  &.icon::before {
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    margin-right: 3px;
-  }
-
-
-  &.external {
-    &::before {
-      content: "\f35d";
-    }
-  }
-
 	&:visited {
 		color: lighten($link-color, 20);
 	}
@@ -145,7 +127,9 @@ img {
     }
   }
 
-  border: 1em solid #131313;
+  border: 5px solid $figure-border;
+  border-radius: 3px;
+  box-shadow: 5px 5px 5px $figure-border;
 }
 
 /*--- PAGINATION ------------------------------------------------------------*/
@@ -286,8 +270,23 @@ header .entry-meta {
 			margin-top: 50px;
 			margin-left: auto;
 			margin-right: auto;
-		}
-	}
+    }
+
+    a[target=_blank] {
+      &::before {
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        margin-right: 5px;
+        margin-left: 5px;
+        content: "\f35d";
+      }
+    }
+  }
 
 	article {
 		background-color: #fff;
@@ -299,18 +298,20 @@ header .entry-meta {
 
 		.featured-image {
 			img {
-				border-color: #fff;
-				border-width: 6px 6px 0 6px;
+        border-color: #fff;
+        border-width: 6px 6px 0 6px;
+        box-shadow: none;
+        border-radius: none;
 			}
 		}
 
 		@media #{$small} {
-		.featured-image {
+		  .featured-image {
 				display:block;
-	        	margin:-25px -15px;
-	        	padding: 0px 0px 20px 0px;
-	        }
-	    }
+        margin:-25px -15px;
+        padding: 0px 0px 20px 0px;
+      }
+    }
 
 		@media #{$medium} {
 			padding: 30px;

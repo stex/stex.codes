@@ -7,14 +7,14 @@ div.highlighter-rouge, figure.highlight {
     //@include font-rem(12);
     font-size: 12px;
     line-height: 1.5;
-    border: 1px solid darken($body-color, 5);
+    border: 5px solid darken($body-color, 5);
     border-radius: 3px;
-    background-color: $body-color;
+    background-color: #3f3f3f;
 
     .highlight {
-        margin: 0;
-		padding: 1em;
-		
+      padding: 1em;
+      margin: 0;
+
 		pre {
 			padding: 0em;
 		}
@@ -22,7 +22,7 @@ div.highlighter-rouge, figure.highlight {
 }
 
 figure.highlight {
-    padding-left: 1em;
+  padding-left: 1em;
 	padding-right: 1em;
 	padding-top: 0px;
 	padding-bottom: 0px;
@@ -48,6 +48,6 @@ figure.highlight {
     }
 }
 
-.highlight pre { 
-    width: 100%; 
+.highlight pre {
+    width: 100%;
 }

@@ -22,9 +22,10 @@ $body-color                      : #202020;
 $text-color                      : #808080;
 $border-color                    : lighten($base-color,60);
 $link-color                      : #F2992E;
+$figure-border                   : #131313;
 
 /*--- SCREEN SIZES ----------------------------------------------------------*/
 
-$small                           : "only screen and (min-width: 30em)";
+$small                           : "only screen and (max-width: 47.5em)";
 $medium                          : "only screen and (min-width: 48em)";
 $large                           : "only screen and (min-width: 62.5em)";
