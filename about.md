@@ -17,7 +17,7 @@ While I worked with many different programming languages over the time (started 
 
 While I think I'm a good developer, I noticed over time that my strengths lie in helping other people finding solutions for their technical problems and keeping an overview over complex architectures. Therefore, I'm trying to move more and more into Architect or Technical Consulting roles. 
 
-Apart from development, I love making music (Piano, Guitar, Violin, Singing), Audiobooks ("Hörspiele") and amateur VA work.
+Apart from development, I love making music (Piano, Guitar, Violin, Singing), audio books ("Hörspiele") and amateur VA work.
 
 ## Past Work
 
@@ -29,7 +29,7 @@ Apart from development, I love making music (Piano, Guitar, Violin, Singing), Au
   </small>
 </h3>
 
-After the insovency of my previous company, the intellectual property was bought by an investor who decided to continue development with a very small team. I was asked to join said team and decided to do so for a certain time as I still believe in the idea of Lokalportal as base of several possible products (and since I've been there since the beginning, I feel a bit responsible for it).
+After the insolvency of my previous company, the intellectual property was bought by an investor who decided to continue development with a very small team. I was asked to join said team and decided to do so for a certain time as I still believe in the idea of Lokalportal as base of several possible products (and since I've been there since the beginning, I feel a bit responsible for it).
 
 Due to the current circumstances, I am doing a lot of backend development work again, including DevOps (containerization, server administration, CI) while [a friend and previous colleague](https://unscoped.dev/oliver-kwast){:target="_blank"} takes care of our web and app clients.
 
@@ -54,7 +54,7 @@ Since I knew the project since the beginning and generally had broad knowledge b
 * Leading the backend team (and developing myself)
 * Keeping an architectural overview over "Lokalportal" and various side projects
 * Helping discover problems that might affect multiple teams and get them to find a common solution / keep each other in the loop regarding development.
-* Provide advice to the product owner regarding the technical feasability and time/effort of new features
+* Provide advice to the product owner regarding the technical feasibility and time/effort of new features
 
 While all of these roles were important for the company, it was too much for one person. I never felt like I did enough for each of them and felt bad e.g. for not spending enough time with the backend team when working on something across teams.
 
@@ -78,11 +78,11 @@ The project I'm most proud of during this time is the [iLearn e-learning platfor
 
 The system started as a bachelor project by a group of students who didn't have previous experience in web development or projects of this size. After the students finished their studies, the university searched for someone who could continue development on it.
 
-In the follwing time, I rewrote most of the application to give it a more modern look and feel (including AJAX content for the first time). Yes, it's bootstrap with a few own extensions, but I've unfortunately never been much of a designer and it looked good enough 😅
+In the following time, I rewrote most of the application to give it a more modern look and feel (including AJAX content for the first time). Yes, it's bootstrap with a few own extensions, but I've unfortunately never been much of a designer and it looked good enough 😅
 
 While the iLearn system is still in use, it might be replaced by a commercial e-learning platform in the future. I might be able to open-source the code in the future as I don't know of any other platform yet that's so specialized for STEM lectures and exercises.
 
-Apart from develpoment work, I also worked as lecturer for the [IQSH](https://www.schleswig-holstein.de/DE/Landesregierung/IQSH/iqsh_node.html){:target="_blank"} and helped training teachers to become computer science teachers in a practical module involving Lego Mindstorms robots. This is something I'm still involved in to the present day.
+Apart from development work, I also worked as lecturer for the [IQSH](https://www.schleswig-holstein.de/DE/Landesregierung/IQSH/iqsh_node.html){:target="_blank"} and helped training teachers to become computer science teachers in a practical module involving Lego Mindstorms robots. This is something I'm still involved in to the present day.
 
 ---
 
@@ -125,7 +125,7 @@ I don't see myself as an expert in building a big SPA in either framework, but I
 
 This is such a buzzword that can mean almost everything... for me, it's more or less being an engineer with both programming and administration/deployment knowledge. I like to write code, deploy it and make sure it runs fine in production instead of just tossing the finished code over to whomever and forgetting about it.
 
-While I'm definitely not an expert in server administration, I usually get where I need to with a bit of help from Google. I love working with Docker due to its encapsulation, scalability and the general feeling of creating something tidy. With `docker-compose`/`docker stack`/`docker-machine`, even complex microservice architectures became managable again.
+While I'm definitely not an expert in server administration, I usually get where I need to with a bit of help from Google. I love working with Docker due to its encapsulation, scalability and the general feeling of creating something tidy. With `docker-compose`/`docker stack`/`docker-machine`, even complex microservice architectures became manageable again.
 
 I also have experience in building complex CI pipelines based on Docker, e.g. in Gitlab-CI.
 
