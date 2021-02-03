@@ -90,7 +90,7 @@ Apart from develpoment work, I also worked as lecturer for the [IQSH](https://ww
   Full Stack Ruby on Rails Developer
   <br />
   <small>
-    <em>2008-2009</em> at <a href="https://visrez.com" target="_blank">Webmedia/Visrez</a>
+    <em>2008-2009</em> at <a href="https://www.visrez.com/" target="_blank">Webmedia/Visrez</a>
   </small>
 </h3>
 
