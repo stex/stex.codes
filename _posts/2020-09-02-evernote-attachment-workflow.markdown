@@ -13,6 +13,14 @@ This post is about building an Alfred workflow that allows exporting all image a
 
 ---
 
+### Update (2021-02-03)
+
+Judging by a [Tweet from the Evernote Support](https://twitter.com/evernotehelps/status/1354859907212783619){:target="_blank"}, it looks like they are planning to get applescript support back in the future.
+
+Really hoping they do, currently, there doesn't seem to be an easy, non-API solution to automate anything.
+
+---
+
 ### Update (2021-01-18)
 
 I updated the workflow for the new Evernote electron app.
@@ -20,7 +28,7 @@ I updated the workflow for the new Evernote electron app.
 Since Evernote supports neither Applescript nor `x-callback-url` now, I had to work around it Selenium style and click on each UI element from Applescript.
 It works, but doesn't look too elegant.
 
-The new workflow can be found here: <a href="https://github.com/Stex/alfred-evernote-helpers/tree/master/evernote-attachments-pdf" class="icon external" target="_blank">Source Code on Github</a>
+The new workflow can be found here: [Source Code on Github](https://github.com/Stex/alfred-evernote-helpers/tree/master/evernote-attachments-pdf){:target="_blank"}
 
 ---
 
