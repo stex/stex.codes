@@ -33,7 +33,6 @@ defaults:
         name: "Stefan Exner"
         twitter: Tagolus
 
-
 # Build settings
 highlighter: rouge
 
@@ -44,10 +43,10 @@ sass:
 plugins:
   - jekyll-feed
   - jekyll-paginate
-  - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-last-modified-at
   - jekyll-redirect-from
+  - jekyll-sitemap
   - custom_liquid
 
 paginate: 5

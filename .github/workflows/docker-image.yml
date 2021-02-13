@@ -27,6 +27,8 @@ jobs:
       THUMBOR_SECURITY_KEY: ${{ secrets.THUMBOR_SECURITY_KEY }}
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Build Production Image
         run: docker build -t ${DOCKER_IMAGE} --build-arg THUMBOR_URL --build-arg THUMBOR_SECURITY_KEY .
       - name: Login to Docker Registry
