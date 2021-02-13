@@ -8,5 +8,23 @@ services:
     ports:
       - "4000:4000"   # main jekyll server
       - "35729:35729" # live-reload
+    environment:
+      THUMBOR_URL: "http://localhost:8888"
+      THUMBOR_SECURITY_KEY: "look-ma-im-a-dolphin"
     volumes:
       - ".:/app"
+
+  thumbor:
+    image: minimalcompact/thumbor
+    environment:
+      AUTO_WEBP: "True"
+      SECURITY_KEY: "look-ma-im-a-dolphin"
+    volumes:
+      - ./thumbor-dev/entrypoint.sh:/entrypoint_wrapper.sh
+    entrypoint: /entrypoint_wrapper.sh
+    restart: always
+    ports:
+      - 8888:80
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+

@@ -24,6 +24,8 @@ group :jekyll_plugins do
   gem "custom_liquid", path: "vendor/gems/custom_liquid"
 end
 
+gem "ruby-thumbor", "~> 3.0.0"
+
 group :test do
   gem "rake", "~> 13.0"
   gem "html-proofer", "~> 3.15"

@@ -10,4 +10,7 @@ COPY ./vendor ./vendor
 RUN bundle install
 COPY ./ ./
 
-CMD ["bundle", "exec", "jekyll", "serve", "-H", "0.0.0.0", "--livereload"]
+EXPOSE 4000
+EXPOSE 35729
+
+CMD ["bundle", "exec", "jekyll", "serve", "-H", "0.0.0.0",  "--livereload"]
