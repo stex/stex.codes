@@ -1,3 +1,5 @@
+@import "variables";
+
 /*--- HEADER ----------------------------------------------------------------*/
 
 header {
@@ -321,6 +323,12 @@ header .entry-meta {
     margin-bottom: 20px;
     padding: 25px 15px;
     overflow: hidden;
+
+    &.detail {
+      h1 {
+        color: $detail-heading-color;
+      }
+    }
 
     .featured-image {
       img {

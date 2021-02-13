@@ -20,8 +20,9 @@ $doc-line-height                 : 26;
 $base-color                      : rgba(#222,0.8);
 $body-color                      : #202020;
 $text-color                      : #808080;
-$border-color                    : lighten($base-color,60);
+$border-color                    : lighten($base-color, 60);
 $link-color                      : #F2992E;
+$detail-heading-color            : lighten($link-color, 10);
 $figure-border                   : #131313;
 $heart-color                     : #a83f39;
 
