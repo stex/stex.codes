@@ -6,7 +6,8 @@ ARG THUMBOR_SECURITY_KEY
 ENV THUMBOR_SECURITY_KEY=$THUMBOR_SECURITY_KEY
 
 RUN apt-get update && \
-        apt-get install -y make libssl-dev g++
+        apt-get install -y make libssl-dev g++ \
+        git
 WORKDIR /app
 
 RUN gem install bundler:2.2.0
