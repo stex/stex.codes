@@ -7,7 +7,7 @@ tags: cypress rails end-to-end-tests capybara talk
 categories: programming
 comment_issue_term: "Cypress On Rails (Talk)"
 image: /assets/images/posts/cypress-on-rails-talk-thumb.png
-featured-image: /assets/images/posts/cypress-on-rails-title.jpg
+featured-image: posts/cypress-on-rails-title.jpg
 ---
 
 A talk about how to replace Capybara with [cypress.io](https://cypress.io) for E2E tests

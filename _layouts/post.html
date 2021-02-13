@@ -21,7 +21,7 @@
 
         {% if page.featured-image %}
         <div class="featured-image">
-          <img src="{{ page.featured-image}}" alt="{{ page.title }} Featured Image" style="width:100%">
+          <img src="{{ page.featured-image | thumbor_image_url }}" alt="{{ page.title }} Featured Image" style="width:100%">
         </div>
         {% endif %}
 
