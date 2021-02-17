@@ -12,6 +12,7 @@ module CustomLiquid
       THUMBOR_URL + ::Thumbor::Cascade.new(THUMBOR_SECURITY_KEY, absolute_url(url)).tap { |image|
         image.width(width.to_i)
         image.height(height.to_i)
+        image.smart
       }.generate
     end
 
