@@ -4,11 +4,11 @@
             <li><a href="/">HOME</a></li>
             <li><a href="/about/">About Me</a></li>
             {% if site.owner.twitter %}
-                <li><a href="https://twitter.com/{{ site.twitter.username }}" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+                <li><a href="https://twitter.com/{{ site.twitter.username }}" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
             {% endif %}
 
             {% if site.owner.github %}
-                <li><a href="https://github.com/{{ site.owner.github }}" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+                <li><a href="https://github.com/{{ site.owner.github }}" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
             {% endif %}
         </ul>
     </nav>
