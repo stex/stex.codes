@@ -31,13 +31,13 @@ Apart from development, I love making music (Piano, Guitar, Violin, Singing),
 audio books ("Hörspiele") and occasionally doing stupid voices (which lead to a role on
 "Die drei Fragezeichen" - a dream come true for me).
 
-## Past and Present Work
+## Past Work
 
 <h3>
   Digital Solution Architect / Fullstack Developer
   <br />
   <small>
-    <em>2020-present</em> at MVP Lab GmbH / Lokalportal
+    <em>2020-2021</em> at MVP Lab GmbH / Lokalportal
   </small>
 </h3>
 
@@ -47,13 +47,9 @@ I was asked to join said team and decided to do so for a certain time as I
 still believe in the idea of Lokalportal as base of several possible products. 
 Since I've been there since the beginning, I still felt a bit responsible for it as well.
 
-Due to the current circumstances, I am doing a lot of backend development work again, 
+Due to the current circumstances, I've been doing a lot of backend development work again, 
 including containerization, server administration and CI work - basically everything that's
 not considered to be purely frontend and needs to be done.
-
-The role is supposed to evolve into more of technical consulting again,
-being it integration of our products into external systems or within the new 
-investor's ecosystem.
 
 ---
 
