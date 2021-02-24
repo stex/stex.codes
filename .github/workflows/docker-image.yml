@@ -1,4 +1,4 @@
-name: Build, Test and Publish
+name: build_test_and_publish
 
 on:
   push:
