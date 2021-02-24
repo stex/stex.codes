@@ -12,6 +12,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - uses: satackey/action-docker-layer-caching@v0.0.11
+      continue-on-error: true
     - name: Build the Docker image
       run: docker build -t "${DOCKER_IMAGE}-dev" -f Dockerfile.dev .
     - name: Build Jekyll and test HTML
