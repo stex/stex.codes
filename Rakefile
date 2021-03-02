@@ -7,6 +7,6 @@ task :test do
     "./_site",
     assume_extension: true,
     internal_domains: ["stex.codes", "localhost"],
-    url_ignore: [/twitter/]
+    url_ignore: [/twitter/, /ilearn/]
   ).run
 end
