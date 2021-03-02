@@ -12,16 +12,22 @@ a {
   text-decoration: none;
   color: $link-color;
 
-  &:visited {
-    color: lighten($link-color, 20);
+  &:link {
+    &:hover {
+      color: lighten($link-color, 20);
+    }
   }
 
-  &:hover {
+  &:visited {
     color: lighten($link-color, 20);
+
+    &:hover {
+      color: $link-color;
+    }
   }
 
   &:focus {
-    outline: thin dotted;
+    outline: none;
     color: darken($link-color, 20);
   }
 

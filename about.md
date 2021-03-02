@@ -115,10 +115,10 @@ Technical Projects during this time include:
   </p>
 
   <a href="{{ "kimmy1.jpeg" | image_url }}">
-    <img src="{{ "kimmy1.jpeg" | thumbor_image_url: "200", "200" }}" alt="Kimmy the Cat" style="width: 200px; height: 200px;" />
+    <img src="{{ "kimmy1.jpeg" | thumbor_image_url: "200", "200" }}" alt="Kimmy the Cat" title="Kimmy the Cat" style="width: 200px; height: 200px;" />
   </a>
   <a href="{{ "kimmy2.jpeg" | image_url }}">
-    <img src="{{ "kimmy2.jpeg" | thumbor_image_url: "200", "200" }}" alt="Kimmy the Cat" style="width: 200px; height: 200px;" />
+    <img src="{{ "kimmy2.jpeg" | thumbor_image_url: "200", "200" }}" alt="Kimmy the Cat" title="Kimmy the Cat" style="width: 200px; height: 200px;" />
   </a>
 </div>
 
