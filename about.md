@@ -12,22 +12,43 @@ hide_comments: true
 I'm Stefan Exner (hence the domain name), currently working as Digital Solution Architect 
 and living in Hamburg, Germany.
 
-I've always been interested in everything regarding computers 
-(that's what happens with 4 older brothers who all ended up in 
-computer science or architecture I guess) and started 
-with programming when I was around 11.
+With 4 older brothers who all ended up somewhere in computer science or architecture,
+there might have been a slight nudge to go into the same direction - I've seen pictures
+of 3-year-old me with a computer keyboard. My starting point with programming was
+QuickBASIC at the age of 11, followed by Pascal, Delphi, VB.net, PHP, ... until I fell in love
+with Ruby in 2008 due to its code aesthetic. Hard to describe, but I'm sure fellow 
+Rubyists understand the beauty of good Ruby code 😌  
 
-While I worked with many different programming languages over the time 
-(started with Quick Basic back then...), I fell in love with Ruby in 2008 
-due to its code aesthetic. Hard to describe, but I'm sure fellow 
-Ruby developers understand the beauty of good Ruby code 😌  
+I like helping people identify their technical needs and working with them
+to find a solution. Before starting development on a client project, it's most important
+to make sure that it will actually solve their problem. Over the years, I learned a lot
+regarding translating business requirements into technology and communication with both
+parties to find the best possible solutions for everyone.
 
-While I think I'm a good developer, I noticed over time that I'm more interested
-in helping other people finding solutions for their technical problems
-and keeping an overview over complex architectures. 
-I'm currently trying to move more and more into Architect or Technical Consulting roles. 
+And to get a few buzzwords out of the way, here's a excerpt of what I've worked with and as
+in the recent past: 
 
-Apart from development, I love making music (Piano, Guitar, Violin, Singing),
+<ul class="list-inline">
+  <li><strong>Technologies</strong></li>
+  <li>Ruby/Rails</li>
+  <li>Solr</li>
+  <li>Docker</li>
+  <li>Gitlab (CI)</li>
+  <li>Javascript (Vanilla, Vue, node)</li>
+  <li>cypress</li>
+  <li>nginx</li>
+  <li>GCP/AWS</li>
+</ul>
+
+<ul class="list-inline">
+  <li><strong>Work</strong></li>
+  <li>Fullstack Development</li>
+  <li>Tech Lead</li>
+  <li>Backend Team Lead</li>
+  <li>Technical Consulting</li>
+</ul>
+
+Apart from work, I love making music (Piano, Guitar, Violin, Singing),
 audio books ("Hörspiele") and occasionally doing stupid voices (which lead to a role on
 "Die drei Fragezeichen" - a dream come true for me).
 
@@ -47,7 +68,7 @@ I was asked to join said team and decided to do so for a certain time as I
 still believe in the idea of Lokalportal as base of several possible products. 
 Since I've been there since the beginning, I still felt a bit responsible for it as well.
 
-Due to the current circumstances, I've been doing a lot of backend development work again, 
+Due to the circumstances, I've been doing a lot of backend development work again, 
 including containerization, server administration and CI work - basically everything that's
 not considered to be purely frontend and needs to be done.
 
@@ -81,6 +102,8 @@ both of the product and its technology, I had to fill multiple roles as the comp
   common solution / keep each other in the loop regarding development.
 * Provide advice to the product owner regarding the technical feasibility and 
   time/effort of new features
+* Do all the other stuff that is needed to keep development working and that's only
+  noticed when it's not done anymore.
 
 While all of these roles were important for the company, 
 it was too much for one person. I never felt like I did enough for each of them and 
@@ -104,6 +127,8 @@ Technical Projects during this time include:
   Google Adwords based on content from different sources (e.g. posts from Lokalportal)
 * On-the-fly mapping of external content to a generic import format 
   using Google Cloud Functions
+* A prototype for Google Assistant integration for Lokalportal (including Google Home)
+* Building a complex CI setup (building containers, linting, unit tests, capybara/cypress feature tests)
 
 ---
 
