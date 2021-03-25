@@ -50,7 +50,9 @@ in the recent past:
 
 Apart from work, I love making music (Piano, Guitar, Violin, Singing),
 audio books ("Hörspiele") and occasionally doing stupid voices (which lead to a role on
-"Die drei Fragezeichen" - a dream come true for me).
+"Die drei Fragezeichen" - a dream come true for me). 
+Oh, and I started with {{ "Postcrossing" | external_link: "https://www.postcrossing.com/user/Stex" }}
+again after a few years of hiatus to see a bit more of the world in times of Covid.
 
 ## Past Work
 
