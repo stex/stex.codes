@@ -18,23 +18,4 @@ jobs:
       run: docker build -t "${DOCKER_IMAGE}-dev" -f Dockerfile.dev .
     - name: Build Jekyll and test HTML
       run: docker run "${DOCKER_IMAGE}-dev" bundle exec rake test
-  build_and_publish:
-    runs-on: ubuntu-latest
-    needs: [build_and_test]
-    env:
-      DOCKER_IMAGE: ${{ secrets.DOCKER_IMAGE }}
-      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      THUMBOR_URL: ${{ secrets.THUMBOR_URL }}
-      THUMBOR_SECURITY_KEY: ${{ secrets.THUMBOR_SECURITY_KEY }}
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Build Production Image
-        run: docker build -t ${DOCKER_IMAGE} --build-arg THUMBOR_URL --build-arg THUMBOR_SECURITY_KEY .
-      - name: Login to Docker Registry
-        run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-      - name: "Push Image"
-        run: docker push "$DOCKER_IMAGE":latest
 

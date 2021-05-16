@@ -71,6 +71,7 @@ exclude:
   - .idea
   - .gitignore
   - bin/
+  - hooks
   - Gemfile
   - Gemfile.lock
   - Rakefile
