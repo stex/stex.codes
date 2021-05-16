@@ -7,6 +7,8 @@ tags: alfred evernote ruby applescript
 categories: programming
 image: /assets/images/posts/evernote-workflow-thumb.png
 featured-image: posts/evernote-alfred-workflow.png
+redirect_from:
+  - /programming/2020/09/02/evernote-attachment-workflow.html
 ---
 
 This post is about building an Alfred workflow that allows exporting all image attachments of the currently opened Evernote note as PDF.

@@ -16,15 +16,19 @@ gem "jekyll", "~> 4.1.1"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
-  gem "jekyll-paginate", "~> 1.1.0"
+  gem "jekyll-paginate-v2", "~> 3.0.0"
   gem "jekyll-sitemap", "~> 1.4.0"
   gem "jekyll-seo-tag", "~> 2.7.1"
   gem "jekyll-last-modified-at"
   gem 'jekyll-redirect-from'
-  gem "custom_liquid", path: "vendor/gems/custom_liquid"
+  gem "custom_ruby", path: "vendor/gems/custom_ruby"
 end
 
 gem "ruby-thumbor", "~> 3.0.0"
+gem "feedjira"
+gem "pry"
+gem "activesupport"
+gem "reverse_markdown"
 
 group :test do
   gem "rake", "~> 13.0"

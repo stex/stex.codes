@@ -8,6 +8,7 @@ categories: programming
 comment_issue_term: "Jekyll Comments Integration"
 redirect_from: 
   - /programming/2020/09/03/comments.html
+  - /programming/2020/09/03/adding-comments-to-a-jekyll-blog.html
 ---
 
 I'm pretty happy with Jekyll and the static HTML pages it creates, but one thing every Wordpress blog features is clearly missing: a comment section.

@@ -1,4 +1,5 @@
 _site
+_posts/*--hey--*
 .sass-cache
 .jekyll-cache
 .jekyll-metadata

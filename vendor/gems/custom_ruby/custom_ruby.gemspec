@@ -1,12 +1,12 @@
 require_relative 'lib/custom_liquid/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "custom_liquid"
+  spec.name          = "custom_ruby"
   spec.version       = CustomLiquid::VERSION
   spec.authors       = ["Stefan Exner"]
   spec.email         = ["stex@sterex.de"]
 
-  spec.summary       = "Custom liquid tags for stex.codes"
+  spec.summary       = "Custom ruby code for stex.codes"
   spec.description   = spec.summary
   spec.homepage      = "https://stex.codes"
   spec.license       = "MIT"

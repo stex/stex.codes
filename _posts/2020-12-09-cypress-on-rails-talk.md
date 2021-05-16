@@ -8,6 +8,8 @@ categories: programming
 comment_issue_term: "Cypress On Rails (Talk)"
 image: /assets/images/posts/cypress-on-rails-talk-thumb.png
 featured-image: posts/cypress-on-rails-title.jpg
+redirect_from:
+  - /programming/2020/12/09/cypress-on-rails-talk.html
 ---
 
 A talk about how to replace Capybara with [cypress.io](https://cypress.io) for E2E tests
