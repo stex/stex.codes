@@ -5,53 +5,52 @@ pagination:
 ---
 {% for post in paginator.posts %}
 <article>
-    {% if post.featured-image %}
-    <!-- POST FEATURED IMAGE -->
-    <div class="featured-image">
-      <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">
-        <img src="{{ post.featured-image | thumbor_image_url: "950" }}" alt="{{ post.title }} Featured Image" style="width:100%">
-      </a>
-    </div>
-    {% endif %}
+  {% if post.featured-image %}
+  <!-- POST FEATURED IMAGE -->
+  <div class="featured-image">
+    <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">
+      <img src="{{ post.featured-image | thumbor_image_url: "950" }}" alt="{{ post.title }} Featured Image" style="width:100%">
+    </a>
+  </div>
+  {% endif %}
 
-    <!-- POST TITLE -->
-    <header>
-        <h1 class="entry-title">
-            <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title }}</a>
-        </h1>
-        <h3 class="entry-subtitle">
-            <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.subtitle }}</a>
-        </h3>
-    </header>
+  <!-- POST TITLE -->
+  <header>
+      <h1 class="entry-title">
+          <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title }}</a>
+      </h1>
+      <h3 class="entry-subtitle">
+          <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.subtitle }}</a>
+      </h3>
+  </header>
 
-    <!-- POST CONTENT -->
-    <div class="entry-content">
-        {{ post.excerpt }}
-    </div>
+  <!-- POST CONTENT -->
+  <div class="entry-content">
+      {{ post.excerpt }}
+  </div>
 
-    <!--- DIVIDING LINE -->
-    <hr>
+  <!--- DIVIDING LINE -->
+  <hr>
 
-    <!-- POST TAGS -->
-    <div class="inline-tags">
-        <span>
-        {% for tag in post.tags %}
-            <a href="/tags/#{{tag}}">#{{ tag }}&nbsp;&nbsp;&nbsp;</a>
-        {% endfor %}
-        </span>
-    </div>
+  <!-- POST TAGS -->
+  <div class="inline-tags">
+      <span>
+      {% for tag in post.tags %}
+          <a href="/tags/#{{tag}}">#{{ tag }}&nbsp;&nbsp;&nbsp;</a>
+      {% endfor %}
+      </span>
+  </div>
 
-    <br>
+  <br>
 
-    <!-- POST DATE -->
-    <div class="post-date">
-        <span class="entry-date date published updated">
-            <time datetime="{{ post.date | date_to_xmlschema }}">
-                <a href="{{ site.url }}{{ post.url }}">{{ post.date | date: "%B %d, %Y" }}</a>
-            </time>
-        </span>
-    </div>
-
+  <!-- POST DATE -->
+  <div class="post-date">
+      <span class="entry-date date published updated">
+          <time datetime="{{ post.date | date_to_xmlschema }}">
+              <a href="{{ site.url }}{{ post.url }}">{{ post.date | date: "%B %d, %Y" }}</a>
+          </time>
+      </span>
+  </div>
 </article>
 {% endfor %}
 

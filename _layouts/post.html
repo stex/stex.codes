@@ -1,38 +1,36 @@
 <!doctype html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
-
-<head>
+<html class="no-js" lang="en">
+  <head>
     {% include head.html %}
-</head>
+  </head>
 
-<header>
-    {% include header.html %}
-</header>
-
-<!-- BODY -->
-<body id="post-index">
+  <!-- BODY -->
+  <body id="post-index">
     {% include browser-upgrade.html %}
+
+    <header>
+      {% include header.html %}
+    </header>
 
     <div id="main" role="main">
       <article class="detail">
 
         {% if page.featured-image %}
         <div class="featured-image">
-          <img src="{{ page.featured-image | thumbor_image_url }}" alt="{{ page.title }} Featured Image" style="width:100%">
+          <img src="{{ page.featured-image | thumbor_image_url }}" alt="{{ page.title }} Featured Image"
+               style="width:100%">
         </div>
         {% endif %}
 
         <!-- MAIN -->
         <h1 class="entry-title">
-            {{ page.title }}
+          {{ page.title }}
         </h1>
 
         {% if page.subtitle %}
         <h3 class="entry-subtitle">
-            <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ page.subtitle }}</a>
+          <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ page.subtitle
+            }}</a>
         </h3>
         {% endif %}
 
@@ -40,7 +38,7 @@
 
         <!-- POST CONTENT -->
         <div class="entry-content">
-            {{ content }}
+          {{ content }}
         </div>
 
         {% if page.tags %}
@@ -61,7 +59,7 @@
 
         <!-- POST DATE -->
         <div class="post-date">
-            {{ page.date | date_to_string }} | Updated: {{ page.last_modified_at | date_to_string }}
+          {{ page.date | date_to_string }} | Updated: {{ page.last_modified_at | date_to_string }}
         </div>
         {% endif %}
       </article>
@@ -80,5 +78,5 @@
 
     <!-- FOOTER -->
     {% include footer.html %}
-</body>
+  </body>
 </html>

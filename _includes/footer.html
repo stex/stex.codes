@@ -1,16 +1,16 @@
-<footer role="contentinfo">
+<footer>
   <div class="footer-wrapper">
     <div>
       Last Update on {{ site.time | date: "%B %d, %Y" }}
     </div>
     <div>
-      <i class="fas fa-heart heart" alt="love"></i>d sites:
+      <i class="fas fa-heart heart"></i>d sites:
       {{ "unscoped.dev" | external_link: "https://unscoped.dev" }}
     </div>
   </div>
 </footer>
 
-<script type="text/javascript">
+<script>
   if (window.location.host === "stex.codes") {
     const pixel = document.createElement("img");
     const currentPath = window.location.pathname;

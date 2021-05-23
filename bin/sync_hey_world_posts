@@ -15,7 +15,7 @@ POSTS_DIR = Pathname.new(File.expand_path("../_posts", __dir__))
 
 #
 # Extend ReverseMarkdown's <pre> converter to respect the "lang" attribute
-# of a <code> child.
+# of a <code> child as well as a pseudo tag for double newlines (see below)
 #
 module ReverseMarkdown
   module Converters
@@ -70,7 +70,7 @@ class Post
     # Therefore, we remove every HTML tag inside here (everything relevant is escaped)
     # and add an own <code> tag.
     xml.css("pre").each do |pre|
-      code = Nokogiri::XML::Node.new "code", xml
+      code = Nokogiri::XML::Node.new("code", xml)
 
       # Search for a "lang: something" line at the end of the pre.
       # If there is one, use it for syntax highlighting
@@ -92,7 +92,7 @@ class Post
       @tags = tag_line.scan(/#(\w+)/).flatten
 
       # Remove the tag line from the post (oh boy, finding the innermost matching element...)
-      # Interesting thought that Nokogiri took that from jQuery
+      # Interesting though that Nokogiri took that from jQuery
       elem = xml.at(":contains('#{tag_line}'):not(:has(:contains('#{tag_line}')))")
       elem.children.last.remove
     else
