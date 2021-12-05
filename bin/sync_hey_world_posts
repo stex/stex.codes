@@ -113,7 +113,6 @@ class Post
       tag_line = markdown_content.lines.last
 
       if tag_line.match?(/^((#\w+) ?)+$/)
-        # Extract the actual tags
         tag_line.scan(/#(\w+)/).flatten
       else
         []
