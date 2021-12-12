@@ -12,12 +12,10 @@ require "reverse_markdown"
 HEY_WORLD_FEED_URL = URI("https://world.hey.com/stex/feed.atom")
 POSTS_DIR = Pathname.new(File.expand_path("../_posts", __dir__))
 
-#
-# Extend ReverseMarkdown's <pre> converter to respect the "lang" attribute
-# of a <code> child as well as a pseudo tag for double newlines (see below)
-#
 module ReverseMarkdown
   module Converters
+    # Extend ReverseMarkdown's <pre> converter to respect the "lang" attribute
+    # of a <code> child as well as a pseudo tag for double newlines (see below)
     class TrixPre < Pre
       def language(node)
         super.presence || node.at_css("code")["lang"]
