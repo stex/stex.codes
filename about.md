@@ -1,7 +1,7 @@
 ---
 layout: post
 title: About Me
-permalink: /about/
+permalink: /about
 hide_comments: true
 ---
 
@@ -9,7 +9,7 @@ hide_comments: true
 
 ## Ahoy, glad you made it here!
 
-I'm Stefan Exner (hence the domain name), currently working as Digital Solution Architect 
+I'm Stefan Exner (hence the domain name), currently working as IT freelancer (Development, Consulting, whatever is needed) 
 and living in Hamburg, Germany.
 
 With 4 older brothers who all ended up somewhere in computer science or architecture,
@@ -51,7 +51,7 @@ in the recent past:
 Apart from work, I love making music (Piano, Guitar, Violin, Singing),
 audio books ("Hörspiele") and occasionally doing stupid voices (which lead to a role on
 "Die drei Fragezeichen" - a dream come true for me). 
-Oh, and I started with {{ "Postcrossing" | external_link: "https://www.postcrossing.com/user/Stex" }}
+Oh, and I started with {{ "Postcrossing" | external_link: "https://www.postcrossing.com" }}
 again after a few years of hiatus to see a bit more of the world in times of Covid.
 
 ## Past Work
