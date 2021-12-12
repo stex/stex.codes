@@ -10,26 +10,6 @@ header {
 
 a[href] {
   text-decoration: none;
-  color: $link-color;
-
-  &:link {
-    &:hover {
-      color: lighten($link-color, 20);
-    }
-  }
-
-  &:visited {
-    color: lighten($link-color, 20);
-
-    &:hover {
-      color: $link-color;
-    }
-  }
-
-  &:focus {
-    outline: none;
-    color: darken($link-color, 20);
-  }
 
   &:hover,
   &:active {
@@ -193,6 +173,13 @@ img {
     color: lighten($base-color, 30);
     font-weight: 100;
 
+    &:visited {
+      text-transform: uppercase;
+      //color: $base-color;
+      color: lighten($base-color, 30);
+      font-weight: 100;
+    }
+
     &:hover {
       text-transform: uppercase;
       color: lighten($base-color, 60);
@@ -238,18 +225,33 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a 
     margin-right: auto;
   }
 
-  a[target=_blank] {
-    &::before {
-      display: inline-block;
-      font-style: normal;
-      font-variant: normal;
-      text-rendering: auto;
-      -webkit-font-smoothing: antialiased;
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
-      margin-right: 5px;
-      margin-left: 5px;
-      content: "\f35d";
+  a {
+    &[target=_blank] {
+      &::before {
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        margin-right: 5px;
+        margin-left: 5px;
+        content: "\f35d";
+      }
+    }
+
+    &[href] {
+      color: $link-color;
+
+      &:hover {
+        color: lighten($link-color, 20);
+      }
+
+      &:focus {
+        outline: none;
+        color: darken($link-color, 20);
+      }
     }
   }
 }

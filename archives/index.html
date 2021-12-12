@@ -1,8 +1,8 @@
 ---
-layout: post-index
+layout: default
 title: Archives
 ---
-<article>
+<article class="content-box">
     <h1 class="entry-title">
         <a>{{ page.title }}</a>
     </h1>
@@ -14,9 +14,9 @@ title: Archives
     {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
 
     {% if forloop.first %}
-    <article>
-        <h1 style="color:black;" class="entry-title">{{ this_year }}</h1>
-      
+    <article class="content-box">
+        <h2 style="color:black;" class="entry-title">{{ this_year }}</h2>
+
         <ul>
         {% endif %}
 
@@ -24,13 +24,13 @@ title: Archives
 
     {% if forloop.last %}
     </ul>
-        
+
     </article>
     {% else %}
         {% if this_year != next_year %}
           </ul>
         </article>
-        <article>
+        <article class="content-box">
           <h2 id="{{ next_year }}-ref" class="year-heading">{{next_year}}</h2>
           <ul>
         {% endif %}

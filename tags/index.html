@@ -1,18 +1,18 @@
 ---
-layout: post-index
+layout: default
 title: Tags Archive
 ---
 
 {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
 {% assign tags_list = site_tags | split:',' | sort %}
 
-<article>
+<article class="content-box">
     <h1 class="entry-title">
         <a>{{ page.title }}</a>
     </h1>
-    
+
     <hr>
-    
+
     <ul class="entry-meta inline-list">
         {% for item in (0..site.tags.size) %}{% unless forloop.last %}
             {% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
@@ -24,7 +24,7 @@ title: Tags Archive
 
 {% for item in (0..site.tags.size) %}{% unless forloop.last %}
     {% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
-	<article>
+	<article class="content-box">
         <h1 id="{{ this_word }}" class="entry-title">{{ this_word }}</h1>
             <ul>
                 {% for post in site.tags[this_word] %}

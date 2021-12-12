@@ -12,9 +12,9 @@ redirect_from:
   - /programming/2020/12/09/cypress-on-rails-talk.html
 ---
 
-A talk about how to replace Capybara with [cypress.io](https://cypress.io) for E2E tests
+A talk about how to replace Capybara with {{ "cypress.io" | external_link: "https://cypress.io" }} for E2E tests
 while maintaining all the nice features like using `FactoryBot` to generate test data on-the-fly. 
-Held on the December meeting of the [Hamburg Ruby UserGroup](https://hamburg.onruby.de/).
+Held on the December meeting of the {{ "Hamburg Ruby UserGroup" | external_link: "https://hamburg.onruby.de/" }}.
 
 As this is an interesting topic, I'll probably write a proper blog post about it in the future.  
 Until then, I'll provide my slides and the demo application I created for the talk here.
