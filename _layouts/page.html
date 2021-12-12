@@ -5,7 +5,7 @@
   </head>
 
   <!-- BODY -->
-  <body class="index">
+  <body class="page">
     <header>
       {% include header.html %}
     </header>
@@ -14,7 +14,11 @@
 
     <!-- MAIN -->
     <div id="main" role="main">
-      {{ content }}
+      <div class="content-box">
+        <div class="entry-content">
+          {{ content }}
+        </div>
+      </div>
     </div>
 
     <!-- FOOTER -->

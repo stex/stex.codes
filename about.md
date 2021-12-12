@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: About Me
 permalink: /about
 hide_comments: true
@@ -9,52 +9,34 @@ hide_comments: true
 
 ## Ahoy, glad you made it here!
 
-I'm Stefan Exner (hence the domain name), currently working as IT freelancer (Development, Consulting, whatever is needed) 
+I'm Stefan Exner (hence the domain name), currently working as IT freelancer (Development, Consulting, whatever is needed)
 and living in Hamburg, Germany.
 
 With 4 older brothers who all ended up somewhere in computer science or architecture,
 there might have been a slight nudge to go into the same direction - I've seen pictures
 of 3-year-old me with a computer keyboard. My starting point with programming was
 QuickBASIC at the age of 11, followed by Pascal, Delphi, VB.net, PHP, ... until I fell in love
-with Ruby in 2008 due to its code aesthetic. Hard to describe, but I'm sure fellow 
-Rubyists understand the beauty of good Ruby code 😌  
+with Ruby in 2008 due to its code aesthetic. Hard to describe, but I'm sure fellow
+Rubyists understand the beauty of good Ruby code 😌
 
-I like helping people identify their technical needs and working with them
-to find a solution. Before starting development on a client project, it's most important
-to make sure that it will actually solve their problem. Over the years, I learned a lot
-regarding translating business requirements into technology and communication with both
-parties to find the best possible solutions for everyone.
+My favourite work could be described as simply helping people solve their technology related problems.  
+This can include identifying the actual needs with them, choosing a proper technical stack to build on, developing a corresponding system myself,
+translating business requirements into technical ones and/or supporting an existing team.  
+I love building MVPs and agile, iterative development. Start with something small and let it grow based on the respective circumstances.
 
 And to get a few buzzwords out of the way, here's a excerpt of what I've worked with and as
-in the recent past: 
+in the recent past:
 
-<ul class="list-inline">
-  <li><strong>Technologies</strong></li>
-  <li>Ruby/Rails</li>
-  <li>Solr</li>
-  <li>Docker</li>
-  <li>Gitlab (CI)</li>
-  <li>Javascript (Vanilla, Vue, node)</li>
-  <li>cypress</li>
-  <li>nginx</li>
-  <li>GCP/AWS</li>
-</ul>
-
-<ul class="list-inline">
-  <li><strong>Work</strong></li>
-  <li>Fullstack Development</li>
-  <li>Tech Lead</li>
-  <li>Backend Team Lead</li>
-  <li>Technical Consulting</li>
-</ul>
+{% include technologies_and_experience.html %}
 
 Apart from work, I love making music (Piano, Guitar, Violin, Singing),
 audio books ("Hörspiele") and occasionally doing stupid voices (which lead to a role on
-"Die drei Fragezeichen" - a dream come true for me). 
+"Die drei Fragezeichen" - a dream come true for me).
 Oh, and I started with {{ "Postcrossing" | external_link: "https://www.postcrossing.com" }}
 again after a few years of hiatus to see a bit more of the world in times of Covid.
 
-## Past Work
+
+## <a name="past-work">Past Work</a>
 
 <h3>
   Digital Solution Architect / Fullstack Developer

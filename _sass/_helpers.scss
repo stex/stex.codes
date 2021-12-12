@@ -17,6 +17,11 @@
 }
 
 ul.list-inline {
+  // Add a bit of spacing if two inline lists are placed directly after another
+  & + & {
+    margin-top: 10px;
+  }
+
   list-style: none;
   padding: 0;
 

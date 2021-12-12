@@ -8,7 +8,7 @@ header {
 
 /*--- LINKS -----------------------------------------------------------------*/
 
-a {
+a[href] {
   text-decoration: none;
   color: $link-color;
 
@@ -192,12 +192,12 @@ img {
     //color: $base-color;
     color: lighten($base-color, 30);
     font-weight: 100;
-  }
 
-  a:hover {
-    text-transform: uppercase;
-    color: lighten($base-color, 60);
-    font-weight: 100;
+    &:hover {
+      text-transform: uppercase;
+      color: lighten($base-color, 60);
+      font-weight: 100;
+    }
   }
 }
 
@@ -223,25 +223,33 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a 
 
 /*--- MAIN CONTENT ----------------------------------------------------------*/
 
-.entry-content {
-  font-size: 16px;
-  line-height: 26px;
+#main {
+  margin: 40px 2px 20px 2px;
 
-
-  h2 {
-    margin-left: -20px;
-
-    @media #{$small} {
-      margin-left: 0;
-    }
+  @media #{$medium} {
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
-  h3 {
-    small {
-      margin-left: 10px;
-      font-size: 80%;
-      font-weight: 400;
-      color: #6c757d;
+  @media #{$large} {
+    max-width: $column-width;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  a[target=_blank] {
+    &::before {
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      margin-right: 5px;
+      margin-left: 5px;
+      content: "\f35d";
     }
   }
 }
@@ -297,93 +305,82 @@ header .entry-meta {
 
 /*--- POST INDEX ------------------------------------------------------------*/
 
-#post-index {
-  #main {
-    margin: 40px 2px 20px 2px;
+.content-box {
+  background-color: #fff;
+  box-shadow: 0 0 0 0, 0 6px 12px rgba($base-color, 0.2);
+  border-radius: 3px;
+  margin-bottom: 20px;
+  padding: 25px 15px;
+  overflow: hidden;
 
-    @media #{$medium} {
-      margin-left: 20px;
-      margin-right: 20px;
-    }
-
-    @media #{$large} {
-      max-width: $column-width;
-      margin-top: 50px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    a[target=_blank] {
-      &::before {
-        display: inline-block;
-        font-style: normal;
-        font-variant: normal;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        margin-right: 5px;
-        margin-left: 5px;
-        content: "\f35d";
-      }
+  &.detail {
+    h1 {
+      color: $detail-heading-color;
     }
   }
 
-  article {
-    background-color: #fff;
-    box-shadow: 0 0 0 0, 0 6px 12px rgba($base-color, 0.2);
-    border-radius: 3px;
-    margin-bottom: 20px;
-    padding: 25px 15px;
-    overflow: hidden;
-
-    &.detail {
-      h1 {
-        color: $detail-heading-color;
-      }
+  .featured-image {
+    img {
+      border-color: #fff;
+      border-width: 6px 6px 0 6px;
+      box-shadow: none;
+      border-radius: none;
     }
+  }
+
+  @media #{$small} {
+    .featured-image {
+      display: block;
+      margin: -25px -15px;
+      padding: 0 0 20px 0;
+    }
+  }
+
+  @media #{$medium} {
+    padding: 30px;
 
     .featured-image {
-      img {
-        border-color: #fff;
-        border-width: 6px 6px 0 6px;
-        box-shadow: none;
-        border-radius: none;
+      display: block;
+      margin: -30px -30px;
+      padding: 0px 0px 30px 0px;
+    }
+  }
+
+  @media #{$large} {
+    margin-bottom: 30px;
+    padding: 50px 80px;
+
+    .featured-image {
+      display: block;
+      margin: -50px -80px;
+      padding: 0px 0px 50px 0px;
+    }
+  }
+
+  a {
+    img:hover {
+      opacity: 0.9;
+    }
+  }
+
+  .entry-content {
+    font-size: 16px;
+    line-height: 26px;
+
+    h2 {
+      margin-left: -20px;
+
+      @media #{$small} {
+        margin-left: 0;
       }
     }
 
-    @media #{$small} {
-      .featured-image {
-        display: block;
-        margin: -25px -15px;
-        padding: 0 0 20px 0;
-      }
-    }
-
-    @media #{$medium} {
-      padding: 30px;
-
-      .featured-image {
-        display: block;
-        margin: -30px -30px;
-        padding: 0px 0px 30px 0px;
-      }
-    }
-
-    @media #{$large} {
-      margin-bottom: 30px;
-      padding: 50px 80px;
-
-      .featured-image {
-        display: block;
-        margin: -50px -80px;
-        padding: 0px 0px 50px 0px;
-      }
-    }
-
-    a {
-      img:hover {
-        opacity: 0.9;
+    h3 {
+      small {
+        margin-left: 10px;
+        font-size: 80%;
+        font-weight: 400;
+        color: #6c757d;
       }
     }
   }

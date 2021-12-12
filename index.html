@@ -1,57 +1,91 @@
 ---
 layout: post-index
-pagination:
-  enabled: true
 ---
-{% for post in paginator.posts %}
-<article>
-  {% if post.featured-image %}
-  <!-- POST FEATURED IMAGE -->
-  <div class="featured-image">
-    <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">
-      <img src="{{ post.featured-image | thumbor_image_url: "950" }}" alt="{{ post.title }} Featured Image" style="width:100%">
-    </a>
-  </div>
-  {% endif %}
 
-  <!-- POST TITLE -->
-  <header>
-      <h1 class="entry-title">
-          <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title }}</a>
-      </h1>
-      <h3 class="entry-subtitle">
-          <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.subtitle }}</a>
-      </h3>
-  </header>
-
-  <!-- POST CONTENT -->
+<div class="content-box">
   <div class="entry-content">
-      {{ post.excerpt }}
+    <img src="{{ "about-me-image.jpeg" | thumbor_image_url }}" alt="Photo Stefan Exner" class="about" />
+
+    <h2>Ahoy, glad you made it here!</h2>
+
+    <p>
+      I'm Stefan Exner, currently working as IT freelancer (Development, Consulting, ...)
+      and living in Hamburg, Germany.
+    </p>
+
+    <p>
+      My favourite work could be described as simply helping people solve their technology related problems.
+      This can include identifying the actual needs with them, choosing a proper technical stack to build on, developing a corresponding system myself,
+      translating business requirements into technical ones and/or supporting an existing team.
+
+      I love building MVPs and agile, iterative development. Start with something small and let it grow based on the respective circumstances.
+    </p>
+
+    <p>
+      Here's a short summary of my skills and work experience, the full version can be found on the <a href="/about">About
+      me</a> page.
+    </p>
+
+    {% include technologies_and_experience.html %}
   </div>
+</div>
 
-  <!--- DIVIDING LINE -->
-  <hr>
+<h2><a href="/about#past-work">Past Work</a></h2>
+<div class="content-box">
+  <div class="entry-content">
+    <ul class="list-inline">
+      <li><strong>2021-2021</strong></li>
+      <li><i>sum.cumo / freeyou</i></li>
+      <li>
+        Freelance backend development.
+        Helped extending the existing claims related functionality of their system and the core engine it was built upon.
+        Also, worked on improving the communication between teams and the claims team's agile workflow.
+      </li>
+    </ul>
 
-  <!-- POST TAGS -->
-  <div class="inline-tags">
-      <span>
-      {% for tag in post.tags %}
-          <a href="/tags/#{{tag}}">#{{ tag }}&nbsp;&nbsp;&nbsp;</a>
-      {% endfor %}
-      </span>
+    <ul class="list-inline">
+      <li><strong>2020-2021</strong></li>
+      <li><i>MVP Lab GmbH</i></li>
+      <li>
+        Full Stack Development, "DevOps", CI/CD
+      </li>
+    </ul>
+
+    <ul class="list-inline">
+      <li><strong>2016-2020</strong></li>
+      <li><i>Lokalportal GmbH</i></li>
+      <li>
+        Backend Development, Tech Lead, Head of Technology Innovation
+      </li>
+    </ul>
+
+    <ul class="list-inline">
+      <li><strong>2013-2020</strong></li>
+      <li><i>IQSH</i></li>
+      <li>
+        Training teachers (mostly math, physics, etc.) to become certified computer science teachers.
+      </li>
+    </ul>
+
+    <ul class="list-inline">
+      <li><strong>2009-2016</strong></li>
+      <li><i>CAU Kiel</i></li>
+      <li>
+        Freelance work while studying computer science (Master's degree)
+      </li>
+    </ul>
+
+    <ul class="list-inline">
+      <li><strong>2008-2009</strong></li>
+      <li><i>Webmedia/Visrez</i></li>
+      <li>
+        Full Stack Ruby on Rails development
+      </li>
+    </ul>
   </div>
+</div>
 
-  <br>
-
-  <!-- POST DATE -->
-  <div class="post-date">
-      <span class="entry-date date published updated">
-          <time datetime="{{ post.date | date_to_xmlschema }}">
-              <a href="{{ site.url }}{{ post.url }}">{{ post.date | date: "%B %d, %Y" }}</a>
-          </time>
-      </span>
-  </div>
-</article>
+<h2><a href="/blog">Latest Posts</a></h2>
+{% for post in site.posts | limit: 2 %}
+{% include post-preview.html %}
 {% endfor %}
-
-{% include pagination.html %}

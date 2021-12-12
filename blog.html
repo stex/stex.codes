@@ -1,0 +1,13 @@
+---
+layout: post-index
+permalink: /blog
+pagination:
+  enabled: true
+  permalink: '/posts/:num/'
+---
+
+{% for post in paginator.posts %}
+{% include post-preview.html %}
+{% endfor %}
+
+{% include pagination.html %}
