@@ -288,6 +288,13 @@ header .entry-meta {
   }
 }
 
+.post-layout-block {
+  max-width: $column-width;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /*--- POST INDEX ------------------------------------------------------------*/
 
 #post-index {
@@ -349,7 +356,7 @@ header .entry-meta {
       .featured-image {
         display: block;
         margin: -25px -15px;
-        padding: 0px 0px 20px 0px;
+        padding: 0 0 20px 0;
       }
     }
 

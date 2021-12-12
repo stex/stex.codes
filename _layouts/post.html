@@ -17,7 +17,8 @@
 
         {% if page.featured-image %}
         <div class="featured-image">
-          <img src="{{ page.featured-image | thumbor_image_url }}" alt="{{ page.title }} Featured Image"
+          <img src="{{ page.featured-image | thumbor_image_url }}"
+               alt="{{ page.title }} Featured Image"
                style="width:100%">
         </div>
         {% endif %}
@@ -29,8 +30,13 @@
 
         {% if page.subtitle %}
         <h3 class="entry-subtitle">
-          <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ page.subtitle
-            }}</a>
+          <a href="{{ site.url }}{{ post.url }}"
+             rel="bookmark"
+             title="{{ post.title }}"
+             itemprop="url"
+          >
+            {{ page.subtitle }}
+          </a>
         </h3>
         {% endif %}
 
@@ -55,11 +61,18 @@
         {% endif %}
 
         {% if page.date %}
-        <br>
+        <br />
 
         <!-- POST DATE -->
         <div class="post-date">
-          {{ page.date | date_to_string }} | Updated: {{ page.last_modified_at | date_to_string }}
+          {% assign created_at = page.date | date_to_string %}
+          {% assign updated_at = page.last_modified_at | date_to_string %}
+
+          {{ created_at }}
+
+          {% if created_at != updated_at %}
+          | Updated: {{ page.last_modified_at | date_to_string }}
+          {% endif %}
         </div>
         {% endif %}
       </article>
@@ -74,6 +87,9 @@
             crossorigin="anonymous"
             async>
     </script>
+    <div class="post-layout-block text-center">
+      <a href="{% link _posts/2020-09-03-adding-comments-to-a-jekyll-blog.md %}">About the Comment Integration</a>
+    </div>
     {% endunless %}
 
     <!-- FOOTER -->
