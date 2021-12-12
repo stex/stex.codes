@@ -396,12 +396,12 @@ header .entry-meta {
   color: lighten($text-color, 20);
   font-size: 14px;
 
-  a:link {
+  a {
     color: lighten($text-color, 60);
   }
 
   a:hover {
-    color: lighten($text-color, 80);
+    color: darken($text-color, 20);
   }
 }
 

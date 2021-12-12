@@ -33,59 +33,19 @@ layout: default
 <h2><a href="/about#past-work">Past Work</a></h2>
 <div class="content-box">
   <div class="entry-content">
+    {% assign work_items = site.past_work | reverse %}
+    {% for work_item in work_items %}
     <ul class="list-inline">
-      <li><strong>2021-2021</strong></li>
-      <li><i>sum.cumo / freeyou</i></li>
-      <li>
-        Freelance backend development.
-        Helped extending the existing claims related functionality of their system and the core engine it was built upon.
-        Also, worked on improving the communication between teams and the claims team's agile workflow.
-      </li>
+      <li><strong>{{ work_item.start_year }}-{{ work_item.end_year }}</strong></li>
+      <li><i>{{ work_item.company_name }}</i></li>
+      <li>{{ work_item.job_title }}</li>
+      {% if work_item.summary %}<li>{{ work_item.summary }}</li>{% endif %}
     </ul>
-
-    <ul class="list-inline">
-      <li><strong>2020-2021</strong></li>
-      <li><i>MVP Lab GmbH</i></li>
-      <li>
-        Full Stack Development, "DevOps", CI/CD
-      </li>
-    </ul>
-
-    <ul class="list-inline">
-      <li><strong>2016-2020</strong></li>
-      <li><i>Lokalportal GmbH</i></li>
-      <li>
-        Backend Development, Tech Lead, Head of Technology Innovation
-      </li>
-    </ul>
-
-    <ul class="list-inline">
-      <li><strong>2013-2020</strong></li>
-      <li><i>IQSH</i></li>
-      <li>
-        Training teachers (mostly math, physics, etc.) to become certified computer science teachers.
-      </li>
-    </ul>
-
-    <ul class="list-inline">
-      <li><strong>2009-2016</strong></li>
-      <li><i>CAU Kiel</i></li>
-      <li>
-        Freelance work while studying computer science (Master's degree)
-      </li>
-    </ul>
-
-    <ul class="list-inline">
-      <li><strong>2008-2009</strong></li>
-      <li><i>Webmedia/Visrez</i></li>
-      <li>
-        Full Stack Ruby on Rails development
-      </li>
-    </ul>
+    {% endfor %}
   </div>
 </div>
 
 <h2><a href="/blog">Latest Posts</a></h2>
-{% for post in site.posts | limit: 2 %}
+{% for post in site.posts limit: 2 %}
 {% include post-preview.html %}
 {% endfor %}

@@ -7,6 +7,12 @@ url: "https://stex.codes"
 logo: "logo-raccoon.jpg"
 timezone: Europe/Berlin
 
+collections:
+  past_work:
+    sort_by: start_year
+  skills:
+    sort_by: order
+
 owner:
   name: Stefan Exner
   email: stex@hey.com

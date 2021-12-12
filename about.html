@@ -1,0 +1,108 @@
+---
+layout: default
+title: About Me
+permalink: /about
+hide_comments: true
+---
+
+<div class="content-box">
+  <div class="entry-content">
+    <img src="{{ 'about-me-image.jpeg' | thumbor_image_url }}" alt="Photo Stefan Exner" class="about"/>
+
+    <h2>Ahoy, glad you made it here!</h2>
+
+    <p>
+      I'm Stefan Exner (hence the domain name), currently working as IT freelancer (Development, Consulting, whatever is
+      needed) and living in Hamburg, Germany.
+    </p>
+
+    <p>
+      With 4 older brothers who all ended up somewhere in computer science or architecture,
+      there might have been a slight nudge to go into the same direction - I've seen pictures
+      of 3-year-old me with a computer keyboard. My starting point with programming was
+      QuickBASIC at the age of 11, followed by Pascal, Delphi, VB.net, PHP, ... until I fell in love
+      with Ruby in 2008 due to its code aesthetic. Hard to describe, but I'm sure fellow
+      Rubyists understand the beauty of good Ruby code 😌
+    </p>
+
+    <p>
+      My favourite work could be described as simply helping people solve their technology related problems.
+      This can include identifying the actual needs with them, choosing a proper technical stack to build on, developing
+      a corresponding system myself,
+      translating business requirements into technical ones and/or supporting an existing team.
+      I love building MVPs and agile, iterative development. Start with something small and let it grow based on the
+      respective circumstances.
+    </p>
+
+    <p>
+      And to get a few buzzwords out of the way, here's a excerpt of what I've worked with and as
+      in the recent past:
+    </p>
+
+    <p>{% include technologies_and_experience.html %}</p>
+
+    <p>
+      Apart from work, I love making music (Piano, Guitar, Violin, Singing),
+      audio books ("Hörspiele") and occasionally doing stupid voices (which lead to a role on
+      "Die drei Fragezeichen" - a dream come true for me).
+      Oh, and I started with {{ "Postcrossing" | external_link: "https://www.postcrossing.com" }}
+      again after a few years of hiatus to see a bit more of the world in times of Covid.
+    </p>
+  </div>
+</div>
+
+<h2><a id="past-work" href="#past-work">Past Work</a></h2>
+{% assign work_items = site.past_work | reverse %}
+{% for past_work in work_items %}
+<div class="content-box">
+  <div class="entry-content">
+    <h3>
+      {{ past_work.job_title }}
+      <br/>
+      <small>
+        <em>{{ past_work.start_year }}-{{ past_work.end_year }}</em>
+        at {% if past_work.company_url %}{{ past_work.company_name | external_link: past_work.company_url }}{% else %}{{ past_work.company_name }}{% endif %}
+      </small>
+    </h3>
+
+    {{ past_work.content | markdownify }}
+ </div>
+</div>
+{% endfor %}
+
+<div class="content-box">
+  <div class="entry-content">
+    <div class="text-center">
+      <p>
+        You made it this far, well done! <br/>
+        Sending you some energy in the {{ "internet's purest form" | external_link:
+        "https://www.youtube.com/watch?v=zi8VTeDHjcM" }}
+        - cat pictures!
+      </p>
+
+      <a href="{{ 'kimmy1.jpeg' | image_url }}">
+        <img src="{{ 'kimmy1.jpeg' | thumbor_image_url: '200', '200' }}"
+             alt="Kimmy the Cat"
+             title="Kimmy the Cat"
+             style="width: 200px; height: 200px;"/>
+      </a>
+      <a href="{{ 'kimmy2.jpeg' | image_url }}">
+        <img src="{{ 'kimmy2.jpeg' | thumbor_image_url: '200', '200' }}"
+             alt="Kimmy the Cat"
+             title="Kimmy the Cat"
+             style="width: 200px; height: 200px;"/>
+      </a>
+    </div>
+  </div>
+</div>
+
+<h2><a id="technologies-and-skills" href="#technologies-and-skills">Technologies and Skills</a></h2>
+
+{% for skill in site.skills %}
+<div class="content-box">
+  <div class="entry-content">
+    <h3>{{ skill.name }}</h3>
+    {{ skill.content | markdownify }}
+  </div>
+</div>
+{% endfor %}
