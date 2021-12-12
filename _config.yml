@@ -1,14 +1,14 @@
 title: stex.codes
-tagline: Ruby and Raccoons
+tagline: Personal Development Blog and CV
 description: >-
-  Blog about personal (and sometimes work) projects and experiences, Ruby and sometimes Raccoons.
+  Stefan Exner | Freelancing Digital Solution Architect from Hamburg, Germany
 baseurl: ""
 url: "https://stex.codes"
 logo: "logo-raccoon.jpg"
 timezone: Europe/Berlin
 
 owner:
-  name: "Stefan Exner"
+  name: Stefan Exner
   email: stex@hey.com
   twitter: Tagolus
   github:  stex
@@ -30,7 +30,7 @@ defaults:
     values:
       image: /assets/images/logo-raccoon.jpg
       author:
-        name: "Stefan Exner"
+        name: Stefan Exner
         twitter: Tagolus
 
 permalink: /:year/:month/:day/:title:output_ext
