@@ -303,6 +303,19 @@ header .entry-meta {
 
   margin-left: auto;
   margin-right: auto;
+
+  a {
+    color: $link-color;
+
+    &:hover {
+      color: lighten($link-color, 20);
+    }
+
+    &:focus {
+      outline: none;
+      color: darken($link-color, 20);
+    }
+  }
 }
 
 /*--- POST INDEX ------------------------------------------------------------*/
