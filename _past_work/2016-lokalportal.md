@@ -51,4 +51,4 @@ Google Adwords based on content from different sources (e.g. posts from Lokalpor
 * On-the-fly mapping of external content to a generic import format
 using Google Cloud Functions
 * A prototype for Google Assistant integration for Lokalportal (including Google Home)
-* Building a complex
+* Building a complex CI setup (building containers, linting, unit tests, capybara/cypress feature tests)
