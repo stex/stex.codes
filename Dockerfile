@@ -1,4 +1,4 @@
-FROM ruby:2-slim as jekyll
+FROM ruby:2.7.5-slim as jekyll
 
 ARG THUMBOR_URL
 ENV THUMBOR_URL=$THUMBOR_URL

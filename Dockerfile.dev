@@ -1,12 +1,11 @@
-FROM ruby:2-slim as jekyll
-RUN apt-get update && \
-        apt-get install -y make libssl-dev g++ git libcurl4
+FROM ruby:2.7.5
 WORKDIR /app
 
 RUN gem install bundler:2.2.0
 
 COPY ./Gemfile* ./
 COPY ./vendor ./vendor
+RUN bundle config set --local path '/gems'
 RUN bundle install
 COPY ./ ./
 

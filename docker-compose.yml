@@ -11,8 +11,11 @@ services:
     environment:
       THUMBOR_URL: "http://localhost:8888"
       THUMBOR_SECURITY_KEY: "look-ma-im-a-dolphin"
+    entrypoint: /app/docker-entrypoint.dev.sh
+    command: ["bundle", "exec", "jekyll", "serve", "-H", "0.0.0.0",  "--livereload"]
     volumes:
-      - ".:/app"
+      - .:/app
+      - gems:/gems
 
   thumbor:
     image: minimalcompact/thumbor
@@ -24,7 +27,9 @@ services:
     entrypoint: /entrypoint_wrapper.sh
     restart: always
     ports:
-      - 8888:80
+      - "8888:80"
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
+volumes:
+  gems: {}

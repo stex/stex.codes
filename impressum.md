@@ -12,8 +12,8 @@ Virchowstr. 49
 22767 Hamburg
 
 **Kontakt:**  
-Telefon: 015678 462651   
-E-Mail: [stex@hey.com](mailto:stex@hey.com)
+Telefon: {{ site.owner.phone }}   
+E-Mail: [{{ site.owner.email }}](mailto:{{ site.owner.email }})
 
 ## Haftungsausschluss
 
