@@ -25,7 +25,6 @@ services:
     volumes:
       - ./thumbor-dev/entrypoint.sh:/entrypoint_wrapper.sh
     entrypoint: /entrypoint_wrapper.sh
-    restart: always
     ports:
       - "8888:80"
     extra_hosts:

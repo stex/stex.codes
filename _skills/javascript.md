@@ -18,3 +18,6 @@ I also worked on standard node projects, e.g. in Google Cloud Functions.
 
 I don't see myself as an expert in building a big SPA in either framework,
 but I know how they work and will find my way around after a short time.
+
+Starting with my fullstack work at {{ "Snaque" | external_link: "https://snaque.com" }},
+I moved to using stimulus for most dynamic content instead of Vue and love it so far 🙂
