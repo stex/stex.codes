@@ -19,7 +19,7 @@ so I decided to use something existing. Of course Disqus came to mind, but if I'
 GA and a facebook pixel for good measure.
 
 Surely I wasn't the first one with this problem, so I searched for a bit. There were a lot of possible solutions (many of them no longer maintained),
- but two of them really caught my eye: [Staticman](https://staticman.net/){:target="_blank"} and [utterances](https://utteranc.es/){:target="_blank"}.
+ but two of them really caught my eye: **Staticman** (no longer available) and [utterances](https://utteranc.es/){:target="_blank"}.
 
 Both of them are open source and use Github as "database" for comments, but in very different ways. Let's take a look:
 
